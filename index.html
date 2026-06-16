@@ -241,7 +241,7 @@ footer {
       <h1>Ctrl-World Policy Rollout Experiments</h1>
       <p class="lead">
         A compact record of policy-in-loop rollouts: forty-four validation-length
-        matched rollouts across seven tasks, plus eight longer pred-only
+        matched rollouts across seven tasks, plus twenty longer pred-only
         pickplace rollouts for two-object instructions.
       </p>
     </section>
@@ -261,7 +261,7 @@ footer {
       </div>
       <div class="fact">
         <b>Videos</b>
-        <span>44 matched-length + 8 long-horizon</span>
+        <span>44 matched-length + 20 long-horizon</span>
       </div>
     </section>
 
@@ -284,7 +284,7 @@ footer {
         </div>
         <div class="setting">
           <b>Long-horizon rollout</b>
-          <span>8 pred-only pickplace rollouts at longer horizons, covering explicit and brief two-object instructions.</span>
+          <span>20 pred-only pickplace rollouts at longer horizons, covering all 10 validation trajectories under two instruction styles.</span>
         </div>
         <div class="setting">
           <b>Execution setting</b>
@@ -325,8 +325,8 @@ footer {
     <footer>
       Local source batches: policy_length_matched_pickplace_v1_20260615,
       policy_length_matched_remaining_v1_20260616, and
-      policy_long_horizon_pickplace_v1_20260615. Detailed logs and review pages
-      remain in the local research workspace.
+      policy_long_horizon_pickplace_complete_all_v1_20260616. Detailed logs and
+      review pages remain in the local research workspace.
     </footer>
   </main>
 
@@ -347,13 +347,13 @@ const longGroups = [
   {
     condition: "explicit_sequence",
     label: "Explicit sequence",
-    count: 4,
+    count: 10,
     note: "instruction spells out the first object placement, then the second object placement"
   },
   {
     condition: "brief_conjunction",
     label: "Brief conjunction",
-    count: 4,
+    count: 10,
     note: "instruction uses a compact two-object goal without enumerating each intermediate step"
   }
 ];
