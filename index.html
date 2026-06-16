@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ctrl-World Policy Rollout Experiments</title>
+  <style>
+:root {
+  --bg: #f8f7f1;
+  --paper: #fffefa;
+  --ink: #111111;
+  --muted: #68645c;
+  --line: #d8d3c7;
+  --soft: #ece7dc;
+  --accent: #284f7a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.page {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 56px;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 16px;
+  margin-bottom: 48px;
+}
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  letter-spacing: 0;
+}
+nav {
+  display: flex;
+  gap: 18px;
+  font-size: 12px;
+}
+nav a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 1.5px;
+}
+.hero {
+  width: min(850px, 100%);
+  margin-bottom: 34px;
+}
+.eyebrow {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 7vw, 72px);
+  font-weight: 400;
+  line-height: 0.98;
+  margin: 0 0 24px;
+  letter-spacing: 0;
+}
+.lead {
+  font-size: 16px;
+  max-width: 800px;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 4px 4px 0 var(--ink);
+  margin: 30px 0 52px;
+}
+.fact {
+  padding: 14px;
+  border-right: 1px solid var(--ink);
+}
+.fact:last-child { border-right: 0; }
+.fact b {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.fact span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.section-title {
+  display: grid;
+  grid-template-columns: 9px 1fr;
+  gap: 18px;
+  align-items: start;
+  margin: 48px 0 18px;
+}
+.dot {
+  width: 7px;
+  height: 7px;
+  background: var(--ink);
+  border-radius: 2px;
+  margin-top: 10px;
+}
+h2 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+.note {
+  max-width: 900px;
+  color: var(--muted);
+  margin: 0 0 18px 27px;
+}
+.settings {
+  margin: 0 0 24px 27px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.setting {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 12px;
+}
+.setting b {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.setting span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.task-band,
+.condition-band {
+  margin: 30px 0 14px;
+  padding: 10px 12px;
+  background: var(--soft);
+  border-left: 4px solid var(--accent);
+  color: var(--muted);
+}
+.task-band b,
+.condition-band b {
+  color: var(--ink);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+.video-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 12px;
+}
+.video-card.primary {
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.video-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+h3 {
+  font-size: 13px;
+  margin: 0;
+}
+.video-head span {
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+video {
+  display: block;
+  width: 100%;
+  background: #000;
+  border: 1px solid #000;
+}
+.speed-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 8px;
+}
+footer {
+  margin-top: 56px;
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  header {
+    display: block;
+    margin-bottom: 34px;
+  }
+  nav {
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .facts,
+  .settings,
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  .fact {
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .fact:last-child {
+    border-bottom: 0;
+  }
+}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">Ctrl-World</div>
+      <nav aria-label="Page sections">
+        <a href="#setup">setup</a>
+        <a href="#matched">matched-length</a>
+        <a href="#long-horizon">long-horizon</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">policy-in-loop rollout record / all matched-length tasks</div>
+      <h1>Ctrl-World Policy Rollout Experiments</h1>
+      <p class="lead">
+        A compact record of policy-in-loop rollouts: forty-four validation-length
+        matched rollouts across seven tasks, plus eight longer pred-only
+        pickplace rollouts for two-object instructions.
+      </p>
+    </section>
+
+    <section class="facts" aria-label="Experiment facts">
+      <div class="fact">
+        <b>Tasks</b>
+        <span>7 matched-length tasks</span>
+      </div>
+      <div class="fact">
+        <b>Policy</b>
+        <span>OpenPI pi05 Droid checkpoint</span>
+      </div>
+      <div class="fact">
+        <b>World model</b>
+        <span>Ctrl-World checkpoint-10000</span>
+      </div>
+      <div class="fact">
+        <b>Videos</b>
+        <span>44 matched-length + 8 long-horizon</span>
+      </div>
+    </section>
+
+    <section id="setup">
+      <div class="section-title">
+        <div class="dot"></div>
+        <h2>Experiment Setup</h2>
+      </div>
+      <p class="note">
+        Matched-length videos follow held-out validation trajectory lengths.
+        Each matched-length video is rendered as a two-row comparison: true
+        validation video on the top row and Ctrl-World policy rollout on the
+        bottom row. Long-horizon videos extend the rollout horizon and are
+        rendered pred-only. All videos on this page default to 1.75x playback.
+      </p>
+      <div class="settings">
+        <div class="setting">
+          <b>Matched-length rollout</b>
+          <span>44 policy-in-loop rollouts across pickplace, towel folding, wiping, tissue, laptop, stacking, and drawer tasks.</span>
+        </div>
+        <div class="setting">
+          <b>Long-horizon rollout</b>
+          <span>8 pred-only pickplace rollouts at longer horizons, covering explicit and brief two-object instructions.</span>
+        </div>
+        <div class="setting">
+          <b>Execution setting</b>
+          <span>NUM_INFERENCE_STEPS=50; action source is the OpenPI policy; world model is Ctrl-World.</span>
+        </div>
+        <div class="setting">
+          <b>Viewing convention</b>
+          <span>Matched-length: top=true, bottom=rollout. Long-horizon: rollout only.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="matched">
+      <div class="section-title">
+        <div class="dot"></div>
+        <h2>Matched-Length Policy Rollouts</h2>
+      </div>
+      <p class="note">
+        These are the complete validation-length policy rollout batches. Each
+        video contains the true validation video on top and the policy-in-loop
+        world-model rollout on bottom.
+      </p>
+      <div id="matched-container"></div>
+    </section>
+
+    <section id="long-horizon">
+      <div class="section-title">
+        <div class="dot"></div>
+        <h2>Long-Horizon Pred-Only Rollouts</h2>
+      </div>
+      <p class="note">
+        These pickplace rollouts extend the horizon beyond the validation-length
+        screening batch and use two-object language instructions.
+      </p>
+      <div id="long-container"></div>
+    </section>
+
+    <footer>
+      Local source batches: policy_length_matched_pickplace_v1_20260615,
+      policy_length_matched_remaining_v1_20260616, and
+      policy_long_horizon_pickplace_v1_20260615. Detailed logs and review pages
+      remain in the local research workspace.
+    </footer>
+  </main>
+
+  <script>
+const PLAYBACK_RATE = 1.75;
+
+const matchedGroups = [
+  { task: "pickplace", label: "Pickplace", count: 10, note: "block-to-plate validation rollouts" },
+  { task: "towel_fold", label: "Towel fold", count: 10, note: "fold-the-towel validation rollouts" },
+  { task: "wipe_table", label: "Wipe table", count: 5, note: "table wiping validation rollouts" },
+  { task: "tissue", label: "Tissue", count: 5, note: "pull-one-tissue validation rollouts" },
+  { task: "close_laptop", label: "Close laptop", count: 5, note: "laptop closing validation rollouts" },
+  { task: "stack", label: "Stack", count: 5, note: "block stacking validation rollouts" },
+  { task: "drawer", label: "Drawer", count: 4, note: "object-to-drawer validation rollouts" }
+];
+
+const longGroups = [
+  {
+    condition: "explicit_sequence",
+    label: "Explicit sequence",
+    count: 4,
+    note: "instruction spells out the first object placement, then the second object placement"
+  },
+  {
+    condition: "brief_conjunction",
+    label: "Brief conjunction",
+    count: 4,
+    note: "instruction uses a compact two-object goal without enumerating each intermediate step"
+  }
+];
+
+function padded(index) {
+  return String(index).padStart(2, "0");
+}
+
+function makeVideoCard({ title, meta, src, primary }) {
+  const card = document.createElement("article");
+  card.className = primary ? "video-card primary" : "video-card";
+
+  const head = document.createElement("div");
+  head.className = "video-head";
+
+  const h3 = document.createElement("h3");
+  h3.textContent = title;
+
+  const span = document.createElement("span");
+  span.textContent = meta;
+
+  head.append(h3, span);
+
+  const video = document.createElement("video");
+  video.src = src;
+  video.controls = true;
+  video.preload = "metadata";
+  video.defaultPlaybackRate = PLAYBACK_RATE;
+  video.playbackRate = PLAYBACK_RATE;
+  video.addEventListener("loadedmetadata", () => {
+    video.defaultPlaybackRate = PLAYBACK_RATE;
+    video.playbackRate = PLAYBACK_RATE;
+  });
+
+  const speed = document.createElement("div");
+  speed.className = "speed-note";
+  speed.textContent = "default playback: 1.75x";
+
+  card.append(head, video, speed);
+  return card;
+}
+
+function renderMatched() {
+  const container = document.getElementById("matched-container");
+  for (const group of matchedGroups) {
+    const band = document.createElement("div");
+    band.className = "task-band";
+    band.innerHTML = `<b>${group.label}.</b> ${group.count} matched-length rollouts; ${group.note}.`;
+    container.appendChild(band);
+
+    const grid = document.createElement("div");
+    grid.className = "video-grid";
+    for (let i = 1; i <= group.count; i += 1) {
+      grid.appendChild(makeVideoCard({
+        title: `${group.label} matched-length rollout`,
+        meta: "top=true / bottom=rollout",
+        src: `media/matched_length/${group.task}/rollout_${padded(i)}.mp4`,
+        primary: i === 1
+      }));
+    }
+    container.appendChild(grid);
+  }
+}
+
+function renderLongHorizon() {
+  const container = document.getElementById("long-container");
+  for (const group of longGroups) {
+    const band = document.createElement("div");
+    band.className = "condition-band";
+    band.innerHTML = `<b>${group.label}.</b> ${group.note}.`;
+    container.appendChild(band);
+
+    const grid = document.createElement("div");
+    grid.className = "video-grid";
+    for (let i = 1; i <= group.count; i += 1) {
+      grid.appendChild(makeVideoCard({
+        title: `${group.label} long-horizon rollout`,
+        meta: "pred-only",
+        src: `media/long_horizon/${group.condition}/rollout_${padded(i)}.mp4`,
+        primary: i === 1
+      }));
+    }
+    container.appendChild(grid);
+  }
+}
+
+renderMatched();
+renderLongHorizon();
+  </script>
+</body>
+</html>
