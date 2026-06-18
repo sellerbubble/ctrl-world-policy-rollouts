@@ -194,6 +194,11 @@ video {
   font-size: 11px;
   margin-top: 8px;
 }
+.instruction-note {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 8px;
+}
 footer {
   margin-top: 56px;
   border-top: 1px solid var(--ink);
@@ -347,14 +352,36 @@ const longGroups = [
   {
     condition: "explicit_sequence",
     label: "Explicit sequence",
-    count: 10,
-    note: "instruction spells out the first object placement, then the second object placement"
+    note: "instruction spells out the first object placement, then the second object placement",
+    items: [
+      { valId: "0000", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
+      { valId: "0001", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
+      { valId: "0002", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
+      { valId: "0003", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
+      { valId: "0004", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
+      { valId: "0005", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
+      { valId: "0006", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
+      { valId: "0007", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
+      { valId: "0008", instruction: "pick up the red block and place it in the white plate, then pick up the blue block and place it in the white plate" },
+      { valId: "0009", instruction: "pick up the red block and place it in the white plate, then pick up the blue block and place it in the white plate" }
+    ]
   },
   {
     condition: "brief_conjunction",
     label: "Brief conjunction",
-    count: 10,
-    note: "instruction uses a compact two-object goal without enumerating each intermediate step"
+    note: "instruction uses a compact two-object goal without enumerating each intermediate step",
+    items: [
+      { valId: "0000", instruction: "put the blue and green blocks in the white plate" },
+      { valId: "0001", instruction: "put the blue and green blocks in the white plate" },
+      { valId: "0002", instruction: "put the blue and green blocks in the white plate" },
+      { valId: "0003", instruction: "put the blue and green blocks in the white plate" },
+      { valId: "0004", instruction: "put the blue and green blocks in the white plate" },
+      { valId: "0005", instruction: "put the green and blue blocks in the white plate" },
+      { valId: "0006", instruction: "put the green and blue blocks in the white plate" },
+      { valId: "0007", instruction: "put the green and blue blocks in the white plate" },
+      { valId: "0008", instruction: "put the red and blue blocks in the white plate" },
+      { valId: "0009", instruction: "put the red and blue blocks in the white plate" }
+    ]
   }
 ];
 
@@ -362,7 +389,7 @@ function padded(index) {
   return String(index).padStart(2, "0");
 }
 
-function makeVideoCard({ title, meta, src, primary }) {
+function makeVideoCard({ title, meta, src, primary, instruction }) {
   const card = document.createElement("article");
   card.className = primary ? "video-card primary" : "video-card";
 
@@ -392,7 +419,14 @@ function makeVideoCard({ title, meta, src, primary }) {
   speed.className = "speed-note";
   speed.textContent = "default playback: 1.75x";
 
-  card.append(head, video, speed);
+  card.append(head, video);
+  if (instruction) {
+    const instructionNode = document.createElement("div");
+    instructionNode.className = "instruction-note";
+    instructionNode.textContent = `instruction: ${instruction}`;
+    card.append(instructionNode);
+  }
+  card.append(speed);
   return card;
 }
 
@@ -423,17 +457,19 @@ function renderLongHorizon() {
   for (const group of longGroups) {
     const band = document.createElement("div");
     band.className = "condition-band";
-    band.innerHTML = `<b>${group.label}.</b> ${group.note}.`;
+    band.innerHTML = `<b>${group.label}.</b> ${group.items.length} rollouts; ${group.note}.`;
     container.appendChild(band);
 
     const grid = document.createElement("div");
     grid.className = "video-grid";
-    for (let i = 1; i <= group.count; i += 1) {
+    for (let i = 1; i <= group.items.length; i += 1) {
+      const item = group.items[i - 1];
       grid.appendChild(makeVideoCard({
         title: `${group.label} long-horizon rollout`,
-        meta: "pred-only",
+        meta: `pred-only / val ${item.valId}`,
         src: `media/long_horizon/${group.condition}/rollout_${padded(i)}.mp4`,
-        primary: i === 1
+        primary: i === 1,
+        instruction: item.instruction
       }));
     }
     container.appendChild(grid);
