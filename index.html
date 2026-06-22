@@ -1,483 +1,546 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ctrl-World Policy Rollout Experiments</title>
-  <style>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ctrl-World Checkpoint Visualizations</title>
+<style>
 :root {
-  --bg: #f8f7f1;
-  --paper: #fffefa;
-  --ink: #111111;
-  --muted: #68645c;
-  --line: #d8d3c7;
-  --soft: #ece7dc;
-  --accent: #284f7a;
+  --bg: #f6f7f8;
+  --paper: #ffffff;
+  --ink: #151719;
+  --muted: #5d6670;
+  --line: #d9dee4;
+  --soft: #eef2f6;
+  --accent: #275a73;
+  --accent2: #9a5b20;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.48;
 }
-.page {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 28px 0 56px;
-}
-header {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 16px;
-  margin-bottom: 48px;
-}
-.brand {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
-  letter-spacing: 0;
-}
-nav {
-  display: flex;
-  gap: 18px;
-  font-size: 12px;
-}
-nav a {
-  color: var(--ink);
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  text-decoration-thickness: 1.5px;
-}
-.hero {
-  width: min(850px, 100%);
-  margin-bottom: 34px;
-}
-.eyebrow {
-  color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 7vw, 72px);
-  font-weight: 400;
-  line-height: 0.98;
-  margin: 0 0 24px;
-  letter-spacing: 0;
-}
-.lead {
-  font-size: 16px;
-  max-width: 800px;
-}
-.facts {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border: 1px solid var(--ink);
-  background: var(--paper);
-  box-shadow: 4px 4px 0 var(--ink);
-  margin: 30px 0 52px;
-}
-.fact {
-  padding: 14px;
-  border-right: 1px solid var(--ink);
-}
-.fact:last-child { border-right: 0; }
-.fact b {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-.fact span {
-  color: var(--muted);
-  font-size: 12px;
-}
-.section-title {
-  display: grid;
-  grid-template-columns: 9px 1fr;
-  gap: 18px;
-  align-items: start;
-  margin: 48px 0 18px;
-}
-.dot {
-  width: 7px;
-  height: 7px;
-  background: var(--ink);
-  border-radius: 2px;
-  margin-top: 10px;
-}
-h2 {
-  font-size: 18px;
-  margin: 0;
-  font-weight: 700;
-}
-.note {
-  max-width: 900px;
-  color: var(--muted);
-  margin: 0 0 18px 27px;
-}
-.settings {
-  margin: 0 0 24px 27px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.setting {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 12px;
-}
-.setting b {
-  display: block;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-.setting span {
-  color: var(--muted);
-  font-size: 12px;
-}
-.task-band,
-.condition-band {
-  margin: 30px 0 14px;
-  padding: 10px 12px;
-  background: var(--soft);
-  border-left: 4px solid var(--accent);
-  color: var(--muted);
-}
-.task-band b,
-.condition-band b {
-  color: var(--ink);
-}
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-  align-items: start;
-}
-.video-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  padding: 12px;
-}
-.video-card.primary {
-  border-color: var(--ink);
-  box-shadow: 4px 4px 0 var(--ink);
-}
-.video-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 10px;
-}
-h3 {
-  font-size: 13px;
-  margin: 0;
-}
-.video-head span {
-  color: var(--muted);
-  font-size: 11px;
-  white-space: nowrap;
-}
-video {
-  display: block;
-  width: 100%;
-  background: #000;
-  border: 1px solid #000;
-}
-.speed-note {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 8px;
-}
-.instruction-note {
-  color: var(--muted);
-  font-size: 11px;
-  margin-top: 8px;
-}
-footer {
-  margin-top: 56px;
-  border-top: 1px solid var(--ink);
-  padding-top: 18px;
-  color: var(--muted);
-  font-size: 12px;
-}
-@media (max-width: 760px) {
-  header {
-    display: block;
-    margin-bottom: 34px;
-  }
-  nav {
-    margin-top: 12px;
-    flex-wrap: wrap;
-  }
-  .facts,
-  .settings,
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-  .fact {
-    border-right: 0;
-    border-bottom: 1px solid var(--ink);
-  }
-  .fact:last-child {
-    border-bottom: 0;
-  }
-}
-  </style>
-</head>
-<body>
-  <main class="page">
-    <header>
-      <div class="brand">Ctrl-World</div>
-      <nav aria-label="Page sections">
-        <a href="#setup">setup</a>
-        <a href="#matched">matched-length</a>
-        <a href="#long-horizon">long-horizon</a>
-      </nav>
-    </header>
-
-    <section class="hero">
-      <div class="eyebrow">policy-in-loop rollout record / all matched-length tasks</div>
-      <h1>Ctrl-World Policy Rollout Experiments</h1>
-      <p class="lead">
-        A compact record of policy-in-loop rollouts: forty-four validation-length
-        matched rollouts across seven tasks, plus twenty longer pred-only
-        pickplace rollouts for two-object instructions.
-      </p>
-    </section>
-
-    <section class="facts" aria-label="Experiment facts">
-      <div class="fact">
-        <b>Tasks</b>
-        <span>7 matched-length tasks</span>
-      </div>
-      <div class="fact">
-        <b>Policy</b>
-        <span>OpenPI pi05 Droid checkpoint</span>
-      </div>
-      <div class="fact">
-        <b>World model</b>
-        <span>Ctrl-World checkpoint-10000</span>
-      </div>
-      <div class="fact">
-        <b>Videos</b>
-        <span>44 matched-length + 20 long-horizon</span>
-      </div>
-    </section>
-
-    <section id="setup">
-      <div class="section-title">
-        <div class="dot"></div>
-        <h2>Experiment Setup</h2>
-      </div>
-      <p class="note">
-        Matched-length videos follow held-out validation trajectory lengths.
-        Each matched-length video is rendered as a two-row comparison: true
-        validation video on the top row and Ctrl-World policy rollout on the
-        bottom row. Long-horizon videos extend the rollout horizon and are
-        rendered pred-only. All videos on this page default to 1.75x playback.
-      </p>
-      <div class="settings">
-        <div class="setting">
-          <b>Matched-length rollout</b>
-          <span>44 policy-in-loop rollouts across pickplace, towel folding, wiping, tissue, laptop, stacking, and drawer tasks.</span>
-        </div>
-        <div class="setting">
-          <b>Long-horizon rollout</b>
-          <span>20 pred-only pickplace rollouts at longer horizons, covering all 10 validation trajectories under two instruction styles.</span>
-        </div>
-        <div class="setting">
-          <b>Execution setting</b>
-          <span>NUM_INFERENCE_STEPS=50; action source is the OpenPI policy; world model is Ctrl-World.</span>
-        </div>
-        <div class="setting">
-          <b>Viewing convention</b>
-          <span>Matched-length: top=true, bottom=rollout. Long-horizon: rollout only.</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="matched">
-      <div class="section-title">
-        <div class="dot"></div>
-        <h2>Matched-Length Policy Rollouts</h2>
-      </div>
-      <p class="note">
-        These are the complete validation-length policy rollout batches. Each
-        video contains the true validation video on top and the policy-in-loop
-        world-model rollout on bottom.
-      </p>
-      <div id="matched-container"></div>
-    </section>
-
-    <section id="long-horizon">
-      <div class="section-title">
-        <div class="dot"></div>
-        <h2>Long-Horizon Pred-Only Rollouts</h2>
-      </div>
-      <p class="note">
-        These pickplace rollouts extend the horizon beyond the validation-length
-        screening batch and use two-object language instructions.
-      </p>
-      <div id="long-container"></div>
-    </section>
-
-    <footer>
-      Local source batches: policy_length_matched_pickplace_v1_20260615,
-      policy_length_matched_remaining_v1_20260616, and
-      policy_long_horizon_pickplace_complete_all_v1_20260616. Detailed logs and
-      review pages remain in the local research workspace.
-    </footer>
-  </main>
-
-  <script>
-const PLAYBACK_RATE = 1.75;
-
-const matchedGroups = [
-  { task: "pickplace", label: "Pickplace", count: 10, note: "block-to-plate validation rollouts" },
-  { task: "towel_fold", label: "Towel fold", count: 10, note: "fold-the-towel validation rollouts" },
-  { task: "wipe_table", label: "Wipe table", count: 5, note: "table wiping validation rollouts" },
-  { task: "tissue", label: "Tissue", count: 5, note: "pull-one-tissue validation rollouts" },
-  { task: "close_laptop", label: "Close laptop", count: 5, note: "laptop closing validation rollouts" },
-  { task: "stack", label: "Stack", count: 5, note: "block stacking validation rollouts" },
-  { task: "drawer", label: "Drawer", count: 4, note: "object-to-drawer validation rollouts" }
-];
-
-const longGroups = [
-  {
-    condition: "explicit_sequence",
-    label: "Explicit sequence",
-    note: "instruction spells out the first object placement, then the second object placement",
-    items: [
-      { valId: "0000", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
-      { valId: "0001", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
-      { valId: "0002", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
-      { valId: "0003", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
-      { valId: "0004", instruction: "pick up the blue block and place it in the white plate, then pick up the green block and place it in the white plate" },
-      { valId: "0005", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
-      { valId: "0006", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
-      { valId: "0007", instruction: "pick up the green block and place it in the white plate, then pick up the blue block and place it in the white plate" },
-      { valId: "0008", instruction: "pick up the red block and place it in the white plate, then pick up the blue block and place it in the white plate" },
-      { valId: "0009", instruction: "pick up the red block and place it in the white plate, then pick up the blue block and place it in the white plate" }
-    ]
-  },
-  {
-    condition: "brief_conjunction",
-    label: "Brief conjunction",
-    note: "instruction uses a compact two-object goal without enumerating each intermediate step",
-    items: [
-      { valId: "0000", instruction: "put the blue and green blocks in the white plate" },
-      { valId: "0001", instruction: "put the blue and green blocks in the white plate" },
-      { valId: "0002", instruction: "put the blue and green blocks in the white plate" },
-      { valId: "0003", instruction: "put the blue and green blocks in the white plate" },
-      { valId: "0004", instruction: "put the blue and green blocks in the white plate" },
-      { valId: "0005", instruction: "put the green and blue blocks in the white plate" },
-      { valId: "0006", instruction: "put the green and blue blocks in the white plate" },
-      { valId: "0007", instruction: "put the green and blue blocks in the white plate" },
-      { valId: "0008", instruction: "put the red and blue blocks in the white plate" },
-      { valId: "0009", instruction: "put the red and blue blocks in the white plate" }
-    ]
-  }
-];
-
-function padded(index) {
-  return String(index).padStart(2, "0");
-}
-
-function makeVideoCard({ title, meta, src, primary, instruction }) {
-  const card = document.createElement("article");
-  card.className = primary ? "video-card primary" : "video-card";
-
-  const head = document.createElement("div");
-  head.className = "video-head";
-
-  const h3 = document.createElement("h3");
-  h3.textContent = title;
-
-  const span = document.createElement("span");
-  span.textContent = meta;
-
-  head.append(h3, span);
-
-  const video = document.createElement("video");
-  video.src = src;
-  video.controls = true;
-  video.preload = "metadata";
-  video.defaultPlaybackRate = PLAYBACK_RATE;
-  video.playbackRate = PLAYBACK_RATE;
-  video.addEventListener("loadedmetadata", () => {
-    video.defaultPlaybackRate = PLAYBACK_RATE;
-    video.playbackRate = PLAYBACK_RATE;
-  });
-
-  const speed = document.createElement("div");
-  speed.className = "speed-note";
-  speed.textContent = "default playback: 1.75x";
-
-  card.append(head, video);
-  if (instruction) {
-    const instructionNode = document.createElement("div");
-    instructionNode.className = "instruction-note";
-    instructionNode.textContent = `instruction: ${instruction}`;
-    card.append(instructionNode);
-  }
-  card.append(speed);
-  return card;
-}
-
-function renderMatched() {
-  const container = document.getElementById("matched-container");
-  for (const group of matchedGroups) {
-    const band = document.createElement("div");
-    band.className = "task-band";
-    band.innerHTML = `<b>${group.label}.</b> ${group.count} matched-length rollouts; ${group.note}.`;
-    container.appendChild(band);
-
-    const grid = document.createElement("div");
-    grid.className = "video-grid";
-    for (let i = 1; i <= group.count; i += 1) {
-      grid.appendChild(makeVideoCard({
-        title: `${group.label} matched-length rollout`,
-        meta: "top=true / bottom=rollout",
-        src: `media/matched_length/${group.task}/rollout_${padded(i)}.mp4`,
-        primary: i === 1
-      }));
-    }
-    container.appendChild(grid);
-  }
-}
-
-function renderLongHorizon() {
-  const container = document.getElementById("long-container");
-  for (const group of longGroups) {
-    const band = document.createElement("div");
-    band.className = "condition-band";
-    band.innerHTML = `<b>${group.label}.</b> ${group.items.length} rollouts; ${group.note}.`;
-    container.appendChild(band);
-
-    const grid = document.createElement("div");
-    grid.className = "video-grid";
-    for (let i = 1; i <= group.items.length; i += 1) {
-      const item = group.items[i - 1];
-      grid.appendChild(makeVideoCard({
-        title: `${group.label} long-horizon rollout`,
-        meta: `pred-only / val ${item.valId}`,
-        src: `media/long_horizon/${group.condition}/rollout_${padded(i)}.mp4`,
-        primary: i === 1,
-        instruction: item.instruction
-      }));
-    }
-    container.appendChild(grid);
-  }
-}
-
-renderMatched();
-renderLongHorizon();
-  </script>
-</body>
-</html>
+a { color: var(--accent); }
+.page { width: min(1440px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 60px; }
+header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; border-bottom: 1px solid var(--ink); padding-bottom: 18px; margin-bottom: 28px; }
+.brand { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+h1 { font-size: clamp(34px, 5vw, 58px); line-height: 1.02; margin: 8px 0 14px; font-weight: 720; letter-spacing: 0; }
+.lead { max-width: 900px; color: var(--muted); font-size: 16px; }
+nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; min-width: 260px; }
+nav a { border: 1px solid var(--line); background: var(--paper); padding: 8px 10px; text-decoration: none; color: var(--ink); }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 24px 0 32px; }
+.fact { background: var(--paper); padding: 14px; min-height: 78px; }
+.fact b { display: block; font-size: 12px; margin-bottom: 4px; }
+.fact span { color: var(--muted); font-size: 13px; }
+section { margin: 42px 0 58px; }
+.section-head { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: end; border-top: 3px solid var(--ink); padding-top: 16px; margin-bottom: 18px; }
+h2 { font-size: 24px; margin: 0 0 8px; letter-spacing: 0; }
+.section-desc { color: var(--muted); max-width: 920px; }
+.badge { background: var(--soft); border: 1px solid var(--line); padding: 8px 10px; color: var(--muted); white-space: nowrap; }
+.summary-wrap { display: grid; grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1.1fr); gap: 18px; align-items: start; margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; background: var(--paper); border: 1px solid var(--line); }
+th, td { border: 1px solid var(--line); padding: 9px 10px; text-align: left; vertical-align: top; }
+th { background: var(--soft); font-size: 12px; }
+.metric-good { color: #116329; font-weight: 700; }
+.metric-bad { color: #9a3412; font-weight: 700; }
+.trend { width: 100%; display: block; border: 1px solid var(--line); background: var(--paper); }
+.matrix { overflow-x: auto; border: 1px solid var(--line); background: var(--paper); }
+.matrix table { min-width: 1120px; border: 0; }
+.matrix th:first-child { width: 132px; position: sticky; left: 0; z-index: 2; }
+.matrix td { width: 31%; }
+.sample-cell { background: #f9fafb; font-size: 12px; color: var(--muted); }
+.sample-cell b { display: block; color: var(--ink); font-size: 13px; margin-bottom: 4px; }
+.cell-meta { display: flex; flex-wrap: wrap; gap: 8px 12px; color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+video { display: block; width: 100%; min-width: 280px; background: #111; border: 1px solid #111; }
+.text { color: var(--muted); font-size: 12px; margin-top: 8px; max-width: 440px; }
+.provenance { color: var(--muted); font-size: 12px; margin-top: 12px; }
+footer { margin-top: 58px; border-top: 1px solid var(--ink); padding-top: 18px; color: var(--muted); font-size: 12px; }
+@media (max-width: 900px) { header, .section-head, .summary-wrap { display: block; } nav { justify-content: flex-start; margin-top: 18px; } .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } .badge { display: inline-block; margin-top: 10px; } }
+</style>
+</head><body><div class="page">
+<header><div><div class="brand">Ctrl-World / DreamZero-DROID LeRobot</div>
+<h1>Checkpoint Visualizations</h1>
+<div class="lead">Unified review page for validate, replay, and longer autoregressive replay results from the 100k, 200k, and 300k checkpoints. Every video uses the same convention: true or recorded future on the top row, model prediction on the bottom row, three camera views tiled horizontally.</div></div>
+<nav><a href="#validate">validate</a><a href="#replay">replay</a><a href="#long_replay">long replay</a></nav></header>
+<div class="facts">
+<div class="fact"><b>Checkpoints</b><span>100k, 200k, 300k from the 500k full-data run</span></div>
+<div class="fact"><b>Samples</b><span>8 fixed validation sample indices per checkpoint</span></div>
+<div class="fact"><b>Video count</b><span>72 total MP4s across 3 result groups</span></div>
+<div class="fact"><b>Playback</b><span>H.264 MP4, browser-checked locally before publication</span></div>
+</div>
+<section id="validate">
+<div class="section-head"><div>
+<h2>Validate Video Generation</h2>
+<div class="section-desc">Fixed validation windows. The model predicts a short future segment conditioned on true history and recorded actions. Videos show GT on top and prediction on bottom, with three camera views tiled horizontally.</div>
+</div>
+<div class="badge">5-frame short validation windows; MP4 duration is about 2.5s at 2fps.</div>
+</div>
+<div class="summary-wrap"><div><table><thead><tr><th>checkpoint</th><th>n</th><th>latent MSE</th><th>SSIM</th></tr></thead><tbody>
+<tr><td>100,000</td><td>8</td><td class="metric-bad">0.1199</td><td class="metric-good">0.8853</td></tr>
+<tr><td>200,000</td><td>8</td><td class="metric-bad">0.1092</td><td class="metric-good">0.8971</td></tr>
+<tr><td>300,000</td><td>8</td><td class="metric-bad">0.1064</td><td class="metric-good">0.8992</td></tr>
+</tbody></table>
+<div class="provenance">CSV: <a href="media/ckpt_eval/validate/per_sample_metrics.csv">per-sample</a> · <a href="media/ckpt_eval/validate/checkpoint_summary.csv">summary</a></div></div>
+<img class="trend" src="media/ckpt_eval/validate/checkpoint_metric_trends.png" alt="Validate Video Generation metric trend">
+</div>
+<div class="matrix"><table><thead><tr><th>sample</th>
+<th>100k</th>
+<th>200k</th>
+<th>300k</th>
+</tr></thead><tbody>
+<tr><th class="sample-cell"><b>sample 0</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9584</span></span><span>MSE <span class="metric-bad">0.0519</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_0_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9611</span></span><span>MSE <span class="metric-bad">0.0463</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_0_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9620</span></span><span>MSE <span class="metric-bad">0.0444</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_0_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 128</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8037</span></span><span>MSE <span class="metric-bad">0.2110</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_128_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8280</span></span><span>MSE <span class="metric-bad">0.1846</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_128_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8284</span></span><span>MSE <span class="metric-bad">0.1794</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_128_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 512</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8633</span></span><span>MSE <span class="metric-bad">0.1077</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_512_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8857</span></span><span>MSE <span class="metric-bad">0.0887</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_512_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8937</span></span><span>MSE <span class="metric-bad">0.0831</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_512_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 1024</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9439</span></span><span>MSE <span class="metric-bad">0.0800</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_1024_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9573</span></span><span>MSE <span class="metric-bad">0.0716</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_1024_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9562</span></span><span>MSE <span class="metric-bad">0.0703</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_1024_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 2048</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7867</span></span><span>MSE <span class="metric-bad">0.2086</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_2048_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7956</span></span><span>MSE <span class="metric-bad">0.1930</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_2048_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8079</span></span><span>MSE <span class="metric-bad">0.1792</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_2048_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 4096</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8951</span></span><span>MSE <span class="metric-bad">0.1112</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_4096_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9010</span></span><span>MSE <span class="metric-bad">0.1058</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_4096_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8964</span></span><span>MSE <span class="metric-bad">0.1081</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_4096_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 8192</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9489</span></span><span>MSE <span class="metric-bad">0.0515</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_8192_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9581</span></span><span>MSE <span class="metric-bad">0.0468</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_8192_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.9590</span></span><span>MSE <span class="metric-bad">0.0474</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_8192_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 16384</b>episode , start </th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8823</span></span><span>MSE <span class="metric-bad">0.1376</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-100000/sample_16384_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8897</span></span><span>MSE <span class="metric-bad">0.1366</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-200000/sample_16384_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8898</span></span><span>MSE <span class="metric-bad">0.1389</span></span><span> frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/validate/checkpoint-300000/sample_16384_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+</tr>
+</tbody></table></div></section>
+<section id="replay">
+<div class="section-head"><div>
+<h2>Autoregressive Replay</h2>
+<div class="section-desc">Autoregressive replay using recorded action chunks. Predicted latents are fed back into the next chunk. This is the standard replay batch with rollout_chunks=6.</div>
+</div>
+<div class="badge">25-frame rollout, about 12.5s at 2fps.</div>
+</div>
+<div class="summary-wrap"><div><table><thead><tr><th>checkpoint</th><th>n</th><th>latent MSE</th><th>SSIM</th></tr></thead><tbody>
+<tr><td>100,000</td><td>8</td><td class="metric-bad">0.3264</td><td class="metric-good">0.7314</td></tr>
+<tr><td>200,000</td><td>8</td><td class="metric-bad">0.2966</td><td class="metric-good">0.7501</td></tr>
+<tr><td>300,000</td><td>8</td><td class="metric-bad">0.2995</td><td class="metric-good">0.7461</td></tr>
+</tbody></table>
+<div class="provenance">CSV: <a href="media/ckpt_eval/replay/per_sample_metrics.csv">per-sample</a> · <a href="media/ckpt_eval/replay/checkpoint_summary.csv">summary</a></div></div>
+<img class="trend" src="media/ckpt_eval/replay/checkpoint_metric_trends.png" alt="Autoregressive Replay metric trend">
+</div>
+<div class="matrix"><table><thead><tr><th>sample</th>
+<th>100k</th>
+<th>200k</th>
+<th>300k</th>
+</tr></thead><tbody>
+<tr><th class="sample-cell"><b>sample 0</b>episode 99, start 0</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7923</span></span><span>MSE <span class="metric-bad">0.2512</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8165</span></span><span>MSE <span class="metric-bad">0.2193</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7999</span></span><span>MSE <span class="metric-bad">0.2516</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 128</b>episode 399, start 8</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.5835</span></span><span>MSE <span class="metric-bad">0.5092</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6067</span></span><span>MSE <span class="metric-bad">0.5056</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6057</span></span><span>MSE <span class="metric-bad">0.4895</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 512</b>episode 899, start 37</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6946</span></span><span>MSE <span class="metric-bad">0.3044</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7142</span></span><span>MSE <span class="metric-bad">0.2756</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7026</span></span><span>MSE <span class="metric-bad">0.2975</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 1024</b>episode 1899, start 14</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7965</span></span><span>MSE <span class="metric-bad">0.3136</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8117</span></span><span>MSE <span class="metric-bad">0.2696</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7990</span></span><span>MSE <span class="metric-bad">0.2861</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 2048</b>episode 3299, start 49</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6832</span></span><span>MSE <span class="metric-bad">0.3261</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7034</span></span><span>MSE <span class="metric-bad">0.3068</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6949</span></span><span>MSE <span class="metric-bad">0.3085</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 4096</b>episode 6499, start 24</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7633</span></span><span>MSE <span class="metric-bad">0.3147</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7847</span></span><span>MSE <span class="metric-bad">0.2742</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7861</span></span><span>MSE <span class="metric-bad">0.2582</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 8192</b>episode 11799, start 44</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8042</span></span><span>MSE <span class="metric-bad">0.2277</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7991</span></span><span>MSE <span class="metric-bad">0.2316</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.8103</span></span><span>MSE <span class="metric-bad">0.2127</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 16384</b>episode 22999, start 15</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7339</span></span><span>MSE <span class="metric-bad">0.3645</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-100000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7643</span></span><span>MSE <span class="metric-bad">0.2901</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-200000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7706</span></span><span>MSE <span class="metric-bad">0.2922</span></span><span>25 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/replay/checkpoint-300000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+</tr>
+</tbody></table></div></section>
+<section id="long_replay">
+<div class="section-head"><div>
+<h2>Long Autoregressive Replay</h2>
+<div class="section-desc">Longer autoregressive replay using the same checkpoints and sample indices as replay, but rollout_chunks=12. This stresses temporal drift and error accumulation.</div>
+</div>
+<div class="badge">49-frame rollout, about 24.5s at 2fps.</div>
+</div>
+<div class="summary-wrap"><div><table><thead><tr><th>checkpoint</th><th>n</th><th>latent MSE</th><th>SSIM</th></tr></thead><tbody>
+<tr><td>100,000</td><td>8</td><td class="metric-bad">0.4072</td><td class="metric-good">0.6789</td></tr>
+<tr><td>200,000</td><td>8</td><td class="metric-bad">0.3702</td><td class="metric-good">0.7030</td></tr>
+<tr><td>300,000</td><td>8</td><td class="metric-bad">0.3776</td><td class="metric-good">0.6983</td></tr>
+</tbody></table>
+<div class="provenance">CSV: <a href="media/ckpt_eval/long_replay/per_sample_metrics.csv">per-sample</a> · <a href="media/ckpt_eval/long_replay/checkpoint_summary.csv">summary</a></div></div>
+<img class="trend" src="media/ckpt_eval/long_replay/checkpoint_metric_trends.png" alt="Long Autoregressive Replay metric trend">
+</div>
+<div class="matrix"><table><thead><tr><th>sample</th>
+<th>100k</th>
+<th>200k</th>
+<th>300k</th>
+</tr></thead><tbody>
+<tr><th class="sample-cell"><b>sample 0</b>episode 99, start 0</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7523</span></span><span>MSE <span class="metric-bad">0.3077</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7716</span></span><span>MSE <span class="metric-bad">0.2816</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7545</span></span><span>MSE <span class="metric-bad">0.3222</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_0_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the crisps&#x27; packet in the bowl</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 128</b>episode 399, start 8</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.5396</span></span><span>MSE <span class="metric-bad">0.5634</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.5779</span></span><span>MSE <span class="metric-bad">0.5399</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.5632</span></span><span>MSE <span class="metric-bad">0.5391</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_128_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the yellow cup and put it on top of the toaster</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 512</b>episode 899, start 37</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6292</span></span><span>MSE <span class="metric-bad">0.3994</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6499</span></span><span>MSE <span class="metric-bad">0.3942</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6512</span></span><span>MSE <span class="metric-bad">0.3916</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_512_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Get the red sauce bottle and put in the blue cup</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 1024</b>episode 1899, start 14</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7600</span></span><span>MSE <span class="metric-bad">0.3966</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7800</span></span><span>MSE <span class="metric-bad">0.3149</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7714</span></span><span>MSE <span class="metric-bad">0.3383</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_1024_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Put the grey building block on the table</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 2048</b>episode 3299, start 49</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6486</span></span><span>MSE <span class="metric-bad">0.3622</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6796</span></span><span>MSE <span class="metric-bad">0.3281</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6660</span></span><span>MSE <span class="metric-bad">0.3340</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_2048_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Turn the iron to the right and then press on the button of the iron</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 4096</b>episode 6499, start 24</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7356</span></span><span>MSE <span class="metric-bad">0.3692</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7604</span></span><span>MSE <span class="metric-bad">0.3235</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7705</span></span><span>MSE <span class="metric-bad">0.3011</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_4096_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the square plush toy on the left and put it on top of the square push toy in the middle</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 8192</b>episode 11799, start 44</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7088</span></span><span>MSE <span class="metric-bad">0.3505</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7116</span></span><span>MSE <span class="metric-bad">0.3495</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.7213</span></span><span>MSE <span class="metric-bad">0.3315</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_8192_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Use the right white towel to wipe the pan</div>
+</td>
+</tr>
+<tr><th class="sample-cell"><b>sample 16384</b>episode 22999, start 15</th>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6576</span></span><span>MSE <span class="metric-bad">0.5083</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-100000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6931</span></span><span>MSE <span class="metric-bad">0.4301</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-200000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+<td>
+<div class="cell-meta"><span>SSIM <span class="metric-good">0.6884</span></span><span>MSE <span class="metric-bad">0.4628</span></span><span>49 frames</span></div>
+<video controls preload="metadata"><source src="media/ckpt_eval/long_replay/checkpoint-300000/sample_16384_replay_gt_pred.mp4" type="video/mp4"></video>
+<div class="text">Pick up the elastic and put it around the bottle</div>
+</td>
+</tr>
+</tbody></table></div></section>
+<footer>Published from local Ctrl-World workspace artifacts under <code>remote_results/*ckpt_compare*</code>. This page is a visual review artifact, not a final benchmark claim.</footer>
+</div><script>document.querySelectorAll("video").forEach(v => { v.playbackRate = 1.75; });</script></body></html>

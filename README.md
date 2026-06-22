@@ -1,24 +1,25 @@
-# Ctrl-World Policy Rollout Experiments
+# Ctrl-World Checkpoint Visualizations
 
-Static GitHub Pages artifact for the Ctrl-World policy-in-loop rollout batches.
+Static GitHub Pages artifact for Ctrl-World validate/replay visual review.
 
-Contents:
+Published URL:
 
-- `index.html`: compact experiment record page.
-- `media/matched_length/*/*.mp4`: 44 validation-length matched policy
-  rollouts across 7 tasks. Each video already contains true video on the top
-  row and policy rollout on the bottom row.
-- `media/long_horizon/*/*.mp4`: 20 long-horizon pred-only pickplace policy
-  rollouts, covering all 10 validation trajectories under two instruction
-  conditions.
+- https://sellerbubble.github.io/ctrl-world-policy-rollouts/
 
-Source batches in the local Ctrl-World workspace:
+Current contents:
 
-- `remote_results/policy_length_matched_pickplace_v1_20260615`
-- `remote_results/policy_length_matched_remaining_v1_20260616`
-- `remote_results/policy_long_horizon_pickplace_complete_all_v1_20260616`
+- `index.html`: unified visual review page.
+- `media/ckpt_eval/validate/`: validate video-generation results for 100k, 200k, and 300k checkpoints.
+- `media/ckpt_eval/replay/`: standard autoregressive replay results, 25 frames per video.
+- `media/ckpt_eval/long_replay/`: longer autoregressive replay results, 49 frames per video.
 
-This page intentionally omits detailed per-video run ids, GPU logs, review
-indexes, and quality metric plots. Those remain in the research workspace.
+Each section includes checkpoint summary metrics, a trend figure, per-sample CSVs,
+and a video matrix. Videos show the true/recorded future on the top row and the
+model prediction on the bottom row, with three camera views tiled horizontally.
+All videos default to `1.75x` playback speed in the page script.
 
-All videos default to `1.75x` playback in the page script.
+Source artifacts in the local Ctrl-World workspace:
+
+- `remote_results/validate_ckpt_compare_100k_200k_300k_20260622`
+- `remote_results/replay_ckpt_compare_100k_200k_300k_20260622`
+- `remote_results/replay_ckpt_compare_100k_200k_300k_chunks12_20260622`
