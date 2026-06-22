@@ -1,25 +1,23 @@
-# Ctrl-World Checkpoint Visualizations
+# Ctrl-World Policy Rollout Experiments
 
-Static GitHub Pages artifact for Ctrl-World validate/replay visual review.
+Static GitHub Pages artifact for the Ctrl-World policy-in-loop rollout batches.
 
-Published URL:
+Published URLs:
 
-- https://sellerbubble.github.io/ctrl-world-policy-rollouts/
+- Main policy rollout page: https://sellerbubble.github.io/ctrl-world-policy-rollouts/
+- Checkpoint visualizations: https://sellerbubble.github.io/ctrl-world-policy-rollouts/checkpoint-visualizations/
 
-Current contents:
+Main page contents:
 
-- `index.html`: unified visual review page.
+- `index.html`: compact experiment record page for policy rollouts.
+- `media/matched_length/*/*.mp4`: 44 validation-length matched policy rollouts across 7 tasks. Each video already contains true video on the top row and policy rollout on the bottom row.
+- `media/long_horizon/*/*.mp4`: 20 long-horizon pred-only pickplace policy rollouts, covering all 10 validation trajectories under two instruction conditions.
+
+Checkpoint visualization page contents:
+
+- `checkpoint-visualizations/index.html`: unified visual review page for validate/replay/long-replay checkpoint results.
 - `media/ckpt_eval/validate/`: validate video-generation results for 100k, 200k, and 300k checkpoints.
 - `media/ckpt_eval/replay/`: standard autoregressive replay results, 25 frames per video.
 - `media/ckpt_eval/long_replay/`: longer autoregressive replay results, 49 frames per video.
 
-Each section includes checkpoint summary metrics, a trend figure, per-sample CSVs,
-and a video matrix. Videos show the true/recorded future on the top row and the
-model prediction on the bottom row, with three camera views tiled horizontally.
-All videos default to `1.75x` playback speed in the page script.
-
-Source artifacts in the local Ctrl-World workspace:
-
-- `remote_results/validate_ckpt_compare_100k_200k_300k_20260622`
-- `remote_results/replay_ckpt_compare_100k_200k_300k_20260622`
-- `remote_results/replay_ckpt_compare_100k_200k_300k_chunks12_20260622`
+All videos on both pages default to `1.75x` playback speed in the page script.
