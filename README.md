@@ -17,7 +17,9 @@ The root page is organized into two top-level parts:
    - validate video-generation results for 100k, 200k, and 300k checkpoints
    - standard autoregressive replay results, 25 frames per video
    - longer autoregressive replay results, 49 frames per video
+   - official DROID replay metric sweep for 20 checkpoints from 20k to 400k
    - media under `media/ckpt_eval/{validate,replay,long_replay}`
+   - official replay metrics under `media/ckpt_eval/official_droid_replay_20ckpts`
 
 Videos are folded by task, instruction condition, result group, or sample row.
 Click a section to expand the videos. All videos default to `1.75x` playback

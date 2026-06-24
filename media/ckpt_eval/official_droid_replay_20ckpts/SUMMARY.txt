@@ -1,0 +1,6 @@
+Official DROID eval replay 20-ckpt summary
+videos: 880
+checkpoints: 20
+trajectories per checkpoint: 44
+best_ssim_step: 400000 ssim=0.836987
+best_mse_step: 400000 pixel_mse=0.009810

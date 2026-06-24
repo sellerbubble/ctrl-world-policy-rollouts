@@ -56,7 +56,7 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a></nav></header>
 <div class="fact-grid">
 <div class="fact"><b>Official section</b><span>Policy-in-loop rollouts using the provided Ctrl-World checkpoint-10000 setup.</span></div>
-<div class="fact"><b>Our section</b><span>100k, 200k, 300k checkpoints from our full-data DreamZero-DROID run.</span></div>
+<div class="fact"><b>Our section</b><span>100k, 200k, 300k rollout videos, plus the 20-checkpoint official DROID replay metric sweep.</span></div>
 <div class="fact"><b>Viewing convention</b><span>Where available: top row is true/recorded future, bottom row is prediction.</span></div>
 <div class="fact"><b>Playback</b><span>All videos default to 1.75x.</span></div>
 </div>
@@ -152,8 +152,8 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 </div></details></section>
 <section id="ours" class="part">
 <div class="part-head"><div><h2>Part 2. Our Trained Checkpoint Rollouts</h2>
-<div class="part-desc">These are the validate, replay, and long replay visualizations for our DreamZero-DROID LeRobot Ctrl-World checkpoints at 100k, 200k, and 300k. The same eight validation sample indices are used for each checkpoint.</div></div>
-<div class="badge">72 videos across validate/replay/long replay</div></div>
+<div class="part-desc">These are the validate, replay, and long replay visualizations for our DreamZero-DROID LeRobot Ctrl-World checkpoints at 100k, 200k, and 300k, followed by the official DROID replay metric sweep across 20 intermediate checkpoints. The video blocks keep the same eight validation sample indices for each checkpoint.</div></div>
+<div class="badge">72 videos + 20-ckpt replay metrics</div></div>
 <details><summary>Validate video generation <span>3 checkpoints x 8 samples</span></summary><div class="detail-body">
 <p class="group-note">Short fixed validation windows. The model predicts future frames conditioned on true history and recorded actions.</p>
 <table class="summary-table"><thead><tr><th>checkpoint</th><th>n</th><th>latent MSE</th><th>SSIM</th></tr></thead><tbody>
@@ -532,6 +532,40 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 </td>
 </tr>
 </tbody></table></div></div></details>
+<details open><summary>Official DROID replay metrics <span>20 checkpoints x 44 trajectories</span></summary><div class="detail-body">
+<p class="group-note">Official replay evaluation on <code>droid_new_setup_full</code> with <code>interact_num=6</code>. Each checkpoint uses 44 selected trajectories, giving 880 replay videos total; frame metrics are computed from the official side-by-side MP4s where the top row is true video and the bottom row is prediction. The aggregate trend favors later checkpoints, with 400k best on mean SSIM and pixel MSE.</p>
+<table class="summary-table"><thead><tr><th>summary</th><th>value</th></tr></thead><tbody>
+<tr><td>checkpoints</td><td>20k to 400k, every 20k</td></tr>
+<tr><td>videos / frame metric rows</td><td>880 videos / 22,000 frame rows</td></tr>
+<tr><td>best overall SSIM</td><td class="metric-good">400k, SSIM 0.8370</td></tr>
+<tr><td>best overall pixel MSE</td><td class="metric-good">400k, MSE 0.00981</td></tr>
+<tr><td>task best SSIM</td><td>drawer 400k, laptop 340k, pickplace 400k, stack 400k, tissue 400k, towel_fold 400k, wipe_table 400k</td></tr>
+</tbody></table>
+<img class="trend" src="media/ckpt_eval/official_droid_replay_20ckpts/checkpoint_metric_trends.png" alt="Official DROID replay metric trend across 20 checkpoints">
+<table class="summary-table"><thead><tr><th>checkpoint</th><th>videos</th><th>SSIM mean</th><th>pixel MSE mean</th><th>SSIM Q4 - Q1</th></tr></thead><tbody>
+<tr><td>20k</td><td>44</td><td>0.8119</td><td>0.01472</td><td>-0.1454</td></tr>
+<tr><td>40k</td><td>44</td><td>0.8222</td><td>0.01326</td><td>-0.1367</td></tr>
+<tr><td>60k</td><td>44</td><td>0.8156</td><td>0.01472</td><td>-0.1587</td></tr>
+<tr><td>80k</td><td>44</td><td>0.8212</td><td>0.01320</td><td>-0.1412</td></tr>
+<tr><td>100k</td><td>44</td><td>0.8203</td><td>0.01248</td><td>-0.1505</td></tr>
+<tr><td>120k</td><td>44</td><td>0.8256</td><td>0.01140</td><td>-0.1342</td></tr>
+<tr><td>140k</td><td>44</td><td>0.8166</td><td>0.01286</td><td>-0.1520</td></tr>
+<tr><td>160k</td><td>44</td><td>0.8281</td><td>0.01096</td><td>-0.1345</td></tr>
+<tr><td>180k</td><td>44</td><td>0.8258</td><td>0.01136</td><td>-0.1402</td></tr>
+<tr><td>200k</td><td>44</td><td>0.8259</td><td>0.01121</td><td>-0.1448</td></tr>
+<tr><td>220k</td><td>44</td><td>0.8239</td><td>0.01221</td><td>-0.1467</td></tr>
+<tr><td>240k</td><td>44</td><td>0.8267</td><td>0.01156</td><td>-0.1419</td></tr>
+<tr><td>260k</td><td>44</td><td>0.8305</td><td>0.01095</td><td>-0.1353</td></tr>
+<tr><td>280k</td><td>44</td><td>0.8234</td><td>0.01192</td><td>-0.1458</td></tr>
+<tr><td>300k</td><td>44</td><td>0.8306</td><td>0.01089</td><td>-0.1362</td></tr>
+<tr><td>320k</td><td>44</td><td>0.8266</td><td>0.01134</td><td>-0.1441</td></tr>
+<tr><td>340k</td><td>44</td><td>0.8287</td><td>0.01097</td><td>-0.1378</td></tr>
+<tr><td>360k</td><td>44</td><td>0.8257</td><td>0.01158</td><td>-0.1437</td></tr>
+<tr><td>380k</td><td>44</td><td>0.8317</td><td>0.01043</td><td>-0.1334</td></tr>
+<tr><td>400k</td><td>44</td><td class="metric-good">0.8370</td><td class="metric-good">0.00981</td><td class="metric-good">-0.1227</td></tr>
+</tbody></table>
+<p class="group-note">Raw artifacts: <a href="media/ckpt_eval/official_droid_replay_20ckpts/checkpoint_summary.csv">checkpoint_summary.csv</a>, <a href="media/ckpt_eval/official_droid_replay_20ckpts/task_checkpoint_summary.csv">task_checkpoint_summary.csv</a>, and <a href="media/ckpt_eval/official_droid_replay_20ckpts/SUMMARY.txt">SUMMARY.txt</a>.</p>
+</div></details>
 </section>
 <footer>Source artifacts are preserved in the local Ctrl-World workspace and in this Pages repository. This page is for visual review, not a final benchmark claim.</footer>
 </main><script>document.querySelectorAll("video").forEach(v => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; v.addEventListener("loadedmetadata", () => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; }); });</script></body></html>
