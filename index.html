@@ -53,7 +53,7 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <header><div><div class="brand">Ctrl-World rollout visual review</div>
 <h1>Official and Our Checkpoint Rollouts</h1>
 <div class="lead">One page with two clearly separated parts: official Ctrl-World checkpoint rollout results first, then our DreamZero-DROID LeRobot checkpoint rollout results. Videos are folded by task, condition, or sample group; click a row to expand.</div></div>
-<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a></nav></header>
+<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a><a href="#camera-rays">camera rays</a></nav></header>
 <div class="fact-grid">
 <div class="fact"><b>Official section</b><span>Policy-in-loop rollouts using the provided Ctrl-World checkpoint-10000 setup.</span></div>
 <div class="fact"><b>Our section</b><span>100k, 200k, 300k rollout videos, plus the 20-checkpoint official DROID replay metric sweep.</span></div>
@@ -565,6 +565,16 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <tr><td>400k</td><td>44</td><td class="metric-good">0.8370</td><td class="metric-good">0.00981</td><td class="metric-good">-0.1227</td></tr>
 </tbody></table>
 <p class="group-note">Raw artifacts: <a href="media/ckpt_eval/official_droid_replay_20ckpts/checkpoint_summary.csv">checkpoint_summary.csv</a>, <a href="media/ckpt_eval/official_droid_replay_20ckpts/task_checkpoint_summary.csv">task_checkpoint_summary.csv</a>, and <a href="media/ckpt_eval/official_droid_replay_20ckpts/SUMMARY.txt">SUMMARY.txt</a>.</p>
+</div></details>
+</section>
+<section id="camera-rays" class="part">
+<div class="part-head"><div><h2>Part 3. AgiBot Camera Pose and Ray Visualization</h2>
+<div class="part-desc">Interactive 3D trajectory visualization for one AgiBot episode. The left panel animates the three camera poses, image planes, and sampled rays in world coordinates; the right panel shows the synchronized original left-wrist, right-wrist, and head videos stacked vertically.</div></div>
+<div class="badge">interactive Plotly page + 3 synchronized videos</div></div>
+<details open><summary>Task 327 episode 0 camera ray trajectory <span>single trajectory case</span></summary><div class="detail-body">
+<p class="group-note">This page is for checking our camera extrinsic interpretation and understanding camera ray geometry. The camera convention used here treats translation as the camera center in world coordinates and rotation as world-to-camera; rays are obtained by back-projecting pixels through intrinsics and rotating them into world coordinates.</p>
+<p class="group-note"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open the interactive camera ray trajectory page</a></p>
+<img class="trend" src="camera_ray_visualization/task327_ep0_stacked_views/page_layout_check_768h.png" alt="AgiBot camera ray trajectory page preview">
 </div></details>
 </section>
 <footer>Source artifacts are preserved in the local Ctrl-World workspace and in this Pages repository. This page is for visual review, not a final benchmark claim.</footer>

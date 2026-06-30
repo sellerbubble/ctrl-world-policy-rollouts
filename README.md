@@ -6,7 +6,7 @@ Published URL:
 
 - https://sellerbubble.github.io/ctrl-world-policy-rollouts/
 
-The root page is organized into two top-level parts:
+The root page is organized into three top-level parts:
 
 1. Official Ctrl-World checkpoint rollouts
    - matched-length policy-in-loop rollout videos across 7 tasks
@@ -20,6 +20,11 @@ The root page is organized into two top-level parts:
    - official DROID replay metric sweep for 20 checkpoints from 20k to 400k
    - media under `media/ckpt_eval/{validate,replay,long_replay}`
    - official replay metrics under `media/ckpt_eval/official_droid_replay_20ckpts`
+
+3. AgiBot camera pose and ray visualization
+   - interactive 3D camera-center, image-plane, and ray animation
+   - synchronized left-wrist, right-wrist, and head videos
+   - page under `camera_ray_visualization/task327_ep0_stacked_views/`
 
 Videos are folded by task, instruction condition, result group, or sample row.
 Click a section to expand the videos. All videos default to `1.75x` playback
