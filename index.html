@@ -61,7 +61,7 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <header><div><div class="brand">Ctrl-World rollout visual review</div>
 <h1>Official and Our Checkpoint Rollouts</h1>
 <div class="lead">One page with two clearly separated parts: official Ctrl-World checkpoint rollout results first, then our DreamZero-DROID LeRobot checkpoint rollout results. Videos are folded by task, condition, or sample group; click a row to expand.</div></div>
-<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a><a href="#camera-rays">camera rays</a><a href="semantic_mask_review/">semantic masks</a></nav></header>
+<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a><a href="#camera-rays">camera rays</a><a href="#semantic-masks">semantic masks</a></nav></header>
 <div class="fact-grid">
 <div class="fact"><b>Official section</b><span>Policy-in-loop rollouts using the provided Ctrl-World checkpoint-10000 setup.</span></div>
 <div class="fact"><b>Our section</b><span>100k, 200k, 300k rollout videos, plus the 20-checkpoint official DROID replay metric sweep.</span></div>
@@ -588,6 +588,13 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <a href="camera_ray_visualization/task453_ep0_stacked_views/"><b>Task 453 / Episode 0</b><span>New confirmation case, 50 sampled frames, stride 24</span></a>
 </div>
 </div></details>
+</section>
+<section id="semantic-masks" class="part">
+<div class="part-head"><div><h2>Part 4. AgiBot Semantic Mask Review</h2>
+<div class="part-desc">Qualitative review pages for the semantic-overlap mask pipeline. The linked subsite includes the newer 20-episode small/medium/large mask overlay videos and the earlier stage-by-stage mask construction review.</div></div>
+<div class="badge">links to mask review pages</div></div>
+<div class="direct-links"><a href="semantic_mask_review/">Open semantic mask review</a><a href="semantic_mask_review/semantic_mask_overlay_20ep_size_compare_v3/">Open small / medium / large overlay</a><a href="semantic_mask_review/semantic_mask_pipeline_review_20260630/">Open pipeline stage review</a></div>
+<p class="group-note">This part is kept as links only so the main rollout overview remains lightweight. Use the linked pages for full videos, mask-size comparison, GroundingDINO proposals, SigLIP2/DINOv2 crop matching, and local latent-grid mask visualizations.</p>
 </section>
 <footer>Source artifacts are preserved in the local Ctrl-World workspace and in this Pages repository. This page is for visual review, not a final benchmark claim.</footer>
 </main><script>document.querySelectorAll("video").forEach(v => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; v.addEventListener("loadedmetadata", () => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; }); });</script></body></html>

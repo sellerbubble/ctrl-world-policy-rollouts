@@ -6,7 +6,7 @@ Published URL:
 
 - https://sellerbubble.github.io/ctrl-world-policy-rollouts/
 
-The root page is organized into three top-level parts:
+The root page is organized into four top-level parts:
 
 1. Official Ctrl-World checkpoint rollouts
    - matched-length policy-in-loop rollout videos across 7 tasks
@@ -27,7 +27,7 @@ The root page is organized into three top-level parts:
    - page under `camera_ray_visualization/task327_ep0_stacked_views/`
 
 4. AgiBot semantic mask review
-   - task-diverse 20-episode full-video overlay with semantic masks
+   - task-diverse 20-episode full-video overlay with small/medium/large semantic masks
    - earlier semantic-mask pipeline stage review
    - page under `semantic_mask_review/`
 
