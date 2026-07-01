@@ -1,0 +1,1228 @@
+{
+  "run_root": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701",
+  "dataset_pose_key": "matrices_as_stored",
+  "align": "Sim3",
+  "methods": [
+    "vggt",
+    "vggt_omega",
+    "pi3x",
+    "cut3r"
+  ],
+  "clips": [
+    {
+      "clip_id": "agibot_task_327/episode_000000/hand_left",
+      "task_id": "327",
+      "camera": "hand_left",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.052810283681180036,
+          "ate_mean": 0.00047160378476944384,
+          "ate_max": 0.0011908464897454748,
+          "alignment_rotation": [
+            [
+              -0.31323712160644307,
+              0.8637971256051735,
+              0.39463531449168543
+            ],
+            [
+              -0.8959507197493903,
+              -0.13100843373376864,
+              -0.4243926225456507
+            ],
+            [
+              -0.3148885730353853,
+              -0.48650931757456134,
+              0.8149563610923437
+            ]
+          ],
+          "alignment_translation": [
+            0.7418781170443426,
+            0.24583742225312433,
+            0.7118206867859106
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.4001324794011179,
+          "ate_mean": 0.0005500924540515944,
+          "ate_max": 0.001686907669831013,
+          "alignment_rotation": [
+            [
+              0.686315887390312,
+              0.6829774808713467,
+              0.25002452547355963
+            ],
+            [
+              0.10953012993291228,
+              -0.43690678232231084,
+              0.8928133143035247
+            ],
+            [
+              0.7190087992177342,
+              -0.5853667433185756,
+              -0.3746626782374744
+            ]
+          ],
+          "alignment_translation": [
+            0.7418459293305781,
+            0.2456753872984428,
+            0.7122836946182948
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.09898229589497101,
+          "ate_mean": 0.0005758529624845394,
+          "ate_max": 0.0014739795665971586,
+          "alignment_rotation": [
+            [
+              -0.8722537203802121,
+              -0.18066042704541718,
+              -0.4544615026409235
+            ],
+            [
+              0.19576934276787272,
+              0.7225802588079288,
+              -0.6629872804310064
+            ],
+            [
+              0.44816047540486387,
+              -0.667262751606018,
+              -0.594905545951668
+            ]
+          ],
+          "alignment_translation": [
+            0.8067277198942292,
+            0.3025026778851895,
+            0.6369461814448149
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.022621959326481502,
+          "ate_mean": 0.0005663413765840506,
+          "ate_max": 0.001315415135216197,
+          "alignment_rotation": [
+            [
+              -0.24023256296263343,
+              -0.8949672643652841,
+              -0.37592806679858903
+            ],
+            [
+              0.8603619993034899,
+              -0.3756431302829198,
+              0.34448435207676853
+            ],
+            [
+              -0.44951701396822163,
+              -0.24067786434520613,
+              0.860237536827663
+            ]
+          ],
+          "alignment_translation": [
+            0.741844726681272,
+            0.24570330024007891,
+            0.7118317278807147
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_327/episode_000000/hand_right",
+      "task_id": "327",
+      "camera": "hand_right",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.4966644827415522,
+          "ate_mean": 0.032334613317003436,
+          "ate_max": 0.08945721353606838,
+          "alignment_rotation": [
+            [
+              0.9010422340782026,
+              0.24000758422528334,
+              0.3612744827990293
+            ],
+            [
+              0.01002248713764381,
+              -0.8442442222685688,
+              0.5358649483943839
+            ],
+            [
+              0.4336155464912879,
+              -0.47921608140846383,
+              -0.7631051730663205
+            ]
+          ],
+          "alignment_translation": [
+            0.7104377532330605,
+            -0.1634603438423053,
+            0.7200605581196755
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.3970457305923806,
+          "ate_mean": 0.019777968463819916,
+          "ate_max": 0.05044603917570775,
+          "alignment_rotation": [
+            [
+              0.9087595771027867,
+              0.20897236390010393,
+              0.3612292653564596
+            ],
+            [
+              -0.07010868343223665,
+              -0.7768416908405261,
+              0.6257809200346645
+            ],
+            [
+              0.4113888714238195,
+              -0.59400971246103,
+              -0.6913115491372914
+            ]
+          ],
+          "alignment_translation": [
+            0.7362889456210457,
+            -0.11142021516930141,
+            0.7140514954503113
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.15310237762581885,
+          "ate_mean": 0.02156025290470716,
+          "ate_max": 0.055534732660975375,
+          "alignment_rotation": [
+            [
+              -0.6770274761162519,
+              -0.3672782157448564,
+              0.637762109899085
+            ],
+            [
+              -0.734129673098508,
+              0.27598907475833145,
+              -0.6203899206872372
+            ],
+            [
+              0.05184032850913167,
+              -0.8882211114656724,
+              -0.4564820231802678
+            ]
+          ],
+          "alignment_translation": [
+            0.7987532353385836,
+            -0.09874653448154252,
+            0.5195161061004163
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.2312840696687808,
+          "ate_mean": 0.11249518155018873,
+          "ate_max": 0.16180400557821104,
+          "alignment_rotation": [
+            [
+              0.12113098606101552,
+              0.5263491507911493,
+              0.8415960169091359
+            ],
+            [
+              -0.028648111178406023,
+              0.8493396038221659,
+              -0.5270688030087881
+            ],
+            [
+              -0.992223044452101,
+              0.039734227570737246,
+              0.11796025270217575
+            ]
+          ],
+          "alignment_translation": [
+            0.7241001925322185,
+            -0.18864837133797605,
+            0.6500069204744084
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_327/episode_000000/head",
+      "task_id": "327",
+      "camera": "head",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 1.1761896900816542e-07,
+          "ate_mean": 6.8620782489856845e-09,
+          "ate_max": 6.082181526021848e-08,
+          "alignment_rotation": [
+            [
+              0.0,
+              -0.9945661962455513,
+              -0.10410610589996683
+            ],
+            [
+              0.9959410820035888,
+              0.009370336758431949,
+              -0.08951847835254145
+            ],
+            [
+              0.0900075617796686,
+              -0.10368354775319277,
+              0.990529333612988
+            ]
+          ],
+          "alignment_translation": [
+            0.5678941010844616,
+            -0.011088619919867662,
+            0.9386819556401539
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 1.7280682789192007e-06,
+          "ate_mean": 7.007005583722576e-09,
+          "ate_max": 6.077848466020217e-08,
+          "alignment_rotation": [
+            [
+              0.0,
+              0.9995647215795801,
+              0.029501989314900223
+            ],
+            [
+              -0.9983252591818197,
+              0.0017067039478865231,
+              -0.05782528894166308
+            ],
+            [
+              -0.05785047000286648,
+              -0.029452581129177036,
+              0.9978907097399378
+            ]
+          ],
+          "alignment_translation": [
+            0.5678941011874482,
+            -0.0110886199817265,
+            0.9386819573640621
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 4.5939192308174845e-07,
+          "ate_mean": 7.268918992910362e-09,
+          "ate_max": 6.206318519503724e-08,
+          "alignment_rotation": [
+            [
+              0.0,
+              0.27375365488945247,
+              0.9617998421889382
+            ],
+            [
+              0.9685193131901076,
+              0.23942893891575273,
+              -0.06814780398104396
+            ],
+            [
+              -0.24893842607713673,
+              0.9315217225831841,
+              -0.2651357018168143
+            ]
+          ],
+          "alignment_translation": [
+            0.567894174622872,
+            -0.011088881721489367,
+            0.9386824201186309
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 1.550011410518867e-07,
+          "ate_mean": 7.347524290917424e-09,
+          "ate_max": 5.906388992260861e-08,
+          "alignment_rotation": [
+            [
+              0.0,
+              0.9537522372986437,
+              0.3005938619596743
+            ],
+            [
+              -0.8042804013822675,
+              0.17862789575514695,
+              -0.5667672457106777
+            ],
+            [
+              -0.5942499776629186,
+              -0.2417617519499729,
+              0.7670842322337889
+            ]
+          ],
+          "alignment_translation": [
+            0.567894102233129,
+            -0.011088621468548915,
+            0.9386819545021095
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_357/episode_000000/hand_left",
+      "task_id": "357",
+      "camera": "hand_left",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.5593448729076784,
+          "ate_mean": 0.048746298050942306,
+          "ate_max": 0.12020842791568731,
+          "alignment_rotation": [
+            [
+              -0.9593973702531586,
+              -0.20798347163163877,
+              0.19052443801091504
+            ],
+            [
+              -0.2791039198698439,
+              0.602525251617196,
+              -0.7477060405513133
+            ],
+            [
+              0.0407147131220576,
+              -0.7705233265071771,
+              -0.6361101441131893
+            ]
+          ],
+          "alignment_translation": [
+            0.78547500527338,
+            0.30789000886708295,
+            0.8736648358668794
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.4279766310550255,
+          "ate_mean": 0.031813501335309004,
+          "ate_max": 0.05981438194670346,
+          "alignment_rotation": [
+            [
+              -0.9854945072271363,
+              -0.1408635881734791,
+              0.09464684755466614
+            ],
+            [
+              -0.15339302888695866,
+              0.5007693757223366,
+              -0.8518806319124452
+            ],
+            [
+              0.0726027197426405,
+              -0.8540418501839088,
+              -0.5151129616117397
+            ]
+          ],
+          "alignment_translation": [
+            0.7550510521329943,
+            0.27554225526191783,
+            0.8967634909670972
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.3165629095965596,
+          "ate_mean": 0.03389338844221219,
+          "ate_max": 0.07509523351454746,
+          "alignment_rotation": [
+            [
+              0.012723537190473245,
+              0.6295580356130396,
+              -0.7768492719932316
+            ],
+            [
+              0.9689665221321154,
+              -0.1995702929555505,
+              -0.14586149991285602
+            ],
+            [
+              -0.24686431615070453,
+              -0.7508850630853479,
+              -0.6125599002928267
+            ]
+          ],
+          "alignment_translation": [
+            0.845240597683078,
+            -0.007002063144183557,
+            0.7128575792436788
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.3521646017028943,
+          "ate_mean": 0.12188827409622814,
+          "ate_max": 0.2453625139582825,
+          "alignment_rotation": [
+            [
+              -0.7356335001025663,
+              -0.48710357043452807,
+              0.4707159070997936
+            ],
+            [
+              0.060270761370363524,
+              -0.7392186885826828,
+              -0.6707631219543411
+            ],
+            [
+              0.6746931071610881,
+              -0.4650654170329509,
+              0.5731521342796202
+            ]
+          ],
+          "alignment_translation": [
+            0.72510936549972,
+            0.29517183535931985,
+            0.7267705083670924
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_357/episode_000000/hand_right",
+      "task_id": "357",
+      "camera": "hand_right",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.2629739731664845,
+          "ate_mean": 0.06655931513568081,
+          "ate_max": 0.19003964254637917,
+          "alignment_rotation": [
+            [
+              -0.9622424278256805,
+              0.24192686715170617,
+              -0.12474334067316312
+            ],
+            [
+              0.08207099182633615,
+              0.6948306593050904,
+              0.7144751270620244
+            ],
+            [
+              0.2595262267917863,
+              0.6772604711924469,
+              -0.6884507184740271
+            ]
+          ],
+          "alignment_translation": [
+            0.7987730394050546,
+            -0.3571241086418583,
+            0.7030463395504214
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.41681523020824535,
+          "ate_mean": 0.03795581975073525,
+          "ate_max": 0.08311677787392548,
+          "alignment_rotation": [
+            [
+              0.9610886867272026,
+              0.26171446216855976,
+              -0.08839726543734971
+            ],
+            [
+              0.2647821028259784,
+              -0.781577364071831,
+              0.5648249835069097
+            ],
+            [
+              0.0787335650661953,
+              -0.5662529154559373,
+              -0.8204624680444672
+            ]
+          ],
+          "alignment_translation": [
+            0.6548131798608382,
+            -0.2537572308772822,
+            0.8814211758488429
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.2978997527731106,
+          "ate_mean": 0.04255309668134863,
+          "ate_max": 0.10146030497277118,
+          "alignment_rotation": [
+            [
+              -0.6703598502911723,
+              -0.7397265005400858,
+              -0.058501072779179944
+            ],
+            [
+              -0.3721174665765117,
+              0.40333537742238074,
+              -0.8359719878011613
+            ],
+            [
+              0.6419861853546974,
+              -0.5386327855954032,
+              -0.5456449945664857
+            ]
+          ],
+          "alignment_translation": [
+            0.6122405519084061,
+            -0.13846697846348852,
+            0.5331033900164364
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.37554843193379756,
+          "ate_mean": 0.05575281865468138,
+          "ate_max": 0.11533428312155478,
+          "alignment_rotation": [
+            [
+              -0.012785365287677472,
+              0.6998185831278152,
+              -0.714206192316643
+            ],
+            [
+              0.990055888170744,
+              0.10893110808070734,
+              0.08901321245044515
+            ],
+            [
+              0.1400923721438805,
+              -0.7059659796344903,
+              -0.6942522328850045
+            ]
+          ],
+          "alignment_translation": [
+            0.6916830019394908,
+            -0.35800213264993397,
+            0.7913152787083567
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_357/episode_000000/head",
+      "task_id": "357",
+      "camera": "head",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 2.0451616245582396e-07,
+          "ate_mean": 2.5837822106272213e-08,
+          "ate_max": 2.2298665952967706e-07,
+          "alignment_rotation": [
+            [
+              0.0,
+              0.7952955376805805,
+              -0.6062219129537932
+            ],
+            [
+              0.8539540346084621,
+              0.3154466312228426,
+              0.4138307983054055
+            ],
+            [
+              0.5203484474618225,
+              -0.5176856484349518,
+              -0.6791458331084379
+            ]
+          ],
+          "alignment_translation": [
+            0.5077119491862406,
+            -0.015776939758037664,
+            1.001333252445891
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 3.315221227686593e-06,
+          "ate_mean": 2.6219498629345746e-08,
+          "ate_max": 2.1951749566563323e-07,
+          "alignment_rotation": [
+            [
+              0.0,
+              -0.5537259073986939,
+              0.8326989969223532
+            ],
+            [
+              0.7599730305818947,
+              0.5412165503366043,
+              0.3598967052223696
+            ],
+            [
+              -0.6499546082521234,
+              0.6328287802535846,
+              0.42081675595749496
+            ]
+          ],
+          "alignment_translation": [
+            0.5077119404152262,
+            -0.01577694335631438,
+            1.001333247378203
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 8.084621858746936e-07,
+          "ate_mean": 2.6008726634676116e-08,
+          "ate_max": 2.2263556915551698e-07,
+          "alignment_rotation": [
+            [
+              0.0,
+              -0.00430065631718777,
+              0.9999907521348592
+            ],
+            [
+              -0.8768234306221169,
+              0.48080806531971415,
+              0.002067809366294215
+            ],
+            [
+              -0.4808125118089814,
+              -0.8768153218772782,
+              -0.0037709162259632594
+            ]
+          ],
+          "alignment_translation": [
+            0.5077118957375563,
+            -0.015776361262510318,
+            1.0013330462944592
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 4.774676372438995e-07,
+          "ate_mean": 2.6101018902675235e-08,
+          "ate_max": 2.1884350207502493e-07,
+          "alignment_rotation": [
+            [
+              0.0,
+              0.6607995822867323,
+              0.7505623971727334
+            ],
+            [
+              0.7053206389737336,
+              0.5320649940812505,
+              -0.46843317379430216
+            ],
+            [
+              -0.7088884229818428,
+              0.5293871495635296,
+              -0.4660755836120543
+            ]
+          ],
+          "alignment_translation": [
+            0.5077119443796031,
+            -0.01577693502955169,
+            1.0013332500557566
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_453/episode_000000/hand_left",
+      "task_id": "453",
+      "camera": "hand_left",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 1.0390891148993815,
+          "ate_mean": 0.0029773192195772756,
+          "ate_max": 0.020558791098037328,
+          "alignment_rotation": [
+            [
+              -0.983361049886537,
+              -0.0851765760371739,
+              0.16045559030657586
+            ],
+            [
+              -0.18053295408298933,
+              0.5565256347489845,
+              -0.810979081331516
+            ],
+            [
+              -0.02022122785879865,
+              -0.8264527625713547,
+              -0.5626428113661983
+            ]
+          ],
+          "alignment_translation": [
+            0.6196485743717696,
+            0.24308736400004566,
+            0.9277928080696385
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.6417298734626021,
+          "ate_mean": 0.0029951963807701093,
+          "ate_max": 0.018508391671803237,
+          "alignment_rotation": [
+            [
+              -0.9857131587472943,
+              -0.09479571441678925,
+              0.13922406832384315
+            ],
+            [
+              -0.16839557492931337,
+              0.5372976780788518,
+              -0.8264103916791592
+            ],
+            [
+              0.003535394837592243,
+              -0.8380483146330441,
+              -0.5455845702767416
+            ]
+          ],
+          "alignment_translation": [
+            0.6190658566500531,
+            0.24380289689494838,
+            0.9284979729619462
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.37317776340647024,
+          "ate_mean": 0.005726007307063973,
+          "ate_max": 0.02276018685368371,
+          "alignment_rotation": [
+            [
+              0.3228168074301918,
+              0.4630303768318763,
+              -0.8254648260050266
+            ],
+            [
+              0.8878961225898641,
+              -0.45019036221991887,
+              0.09470540245510395
+            ],
+            [
+              -0.32776483083220376,
+              -0.7634995140111284,
+              -0.5564518916980226
+            ]
+          ],
+          "alignment_translation": [
+            0.7416571425871776,
+            -0.15895540915335812,
+            0.7995166732380109
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.4558722932930863,
+          "ate_mean": 0.013544623270344313,
+          "ate_max": 0.0496977650614292,
+          "alignment_rotation": [
+            [
+              -0.9743929307498977,
+              -0.07995430309177087,
+              0.21015643202560835
+            ],
+            [
+              -0.2191745850191459,
+              0.546435315449021,
+              -0.8083136441455225
+            ],
+            [
+              -0.05020874213032883,
+              -0.8336760494624025,
+              -0.5499666596862505
+            ]
+          ],
+          "alignment_translation": [
+            0.621761834818674,
+            0.25079955883842636,
+            0.9236552937817675
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_453/episode_000000/hand_right",
+      "task_id": "453",
+      "camera": "hand_right",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.848424443937042,
+          "ate_mean": 0.033098790116889286,
+          "ate_max": 0.06636697952324218,
+          "alignment_rotation": [
+            [
+              0.9775420071683241,
+              -0.1388612710516953,
+              0.1585218332698454
+            ],
+            [
+              -0.2050257053837109,
+              -0.45266496087605584,
+              0.8677896596105478
+            ],
+            [
+              -0.04874509568394357,
+              -0.8808018963404811,
+              -0.4709691444774028
+            ]
+          ],
+          "alignment_translation": [
+            0.6278208680972419,
+            -0.2938337337876735,
+            0.932360526325364
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.44712359881840996,
+          "ate_mean": 0.02381320504295816,
+          "ate_max": 0.06575768161794655,
+          "alignment_rotation": [
+            [
+              0.9859649523261422,
+              -0.09360550511835306,
+              0.13824298244773575
+            ],
+            [
+              -0.16622008410374667,
+              -0.4729049646185133,
+              0.8652928857211915
+            ],
+            [
+              -0.015620384920045425,
+              -0.8761272189874598,
+              -0.48182683582823477
+            ]
+          ],
+          "alignment_translation": [
+            0.6162277252905314,
+            -0.26305487817242057,
+            0.9440417127774184
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.23306452147978488,
+          "ate_mean": 0.03381855043239592,
+          "ate_max": 0.07162220747546229,
+          "alignment_rotation": [
+            [
+              -0.789899505951745,
+              -0.3908585789283933,
+              0.4725339583302626
+            ],
+            [
+              -0.5996344876740249,
+              0.653683948081482,
+              -0.4616663050434969
+            ],
+            [
+              -0.128441627555473,
+              -0.6480176442803721,
+              -0.7507169113668736
+            ]
+          ],
+          "alignment_translation": [
+            0.7203443087829675,
+            -0.018247300591226534,
+            0.7780063652683825
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.2672000065209414,
+          "ate_mean": 0.05470941627577155,
+          "ate_max": 0.1772608556236147,
+          "alignment_rotation": [
+            [
+              0.811190629870537,
+              -0.555411707844598,
+              0.18299616607838637
+            ],
+            [
+              -0.28856174010267344,
+              -0.10800109919014222,
+              0.9513505582710502
+            ],
+            [
+              -0.508627451244188,
+              -0.8245323507072772,
+              -0.2478800485677971
+            ]
+          ],
+          "alignment_translation": [
+            0.6509150430954368,
+            -0.2968214357065128,
+            0.9583619596818025
+          ]
+        }
+      }
+    },
+    {
+      "clip_id": "agibot_task_453/episode_000000/head",
+      "task_id": "453",
+      "camera": "head",
+      "stats": {
+        "vggt": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 4.9304713028030256e-05,
+          "ate_mean": 1.1893756500081806e-06,
+          "ate_max": 6.711156701462013e-06,
+          "alignment_rotation": [
+            [
+              0.7068118884464887,
+              -0.21686611417288243,
+              0.6733394707532476
+            ],
+            [
+              0.3096372539006329,
+              -0.7609770363791458,
+              -0.5701216721897948
+            ],
+            [
+              0.6360359465844555,
+              0.6114597604316794,
+              -0.4707177880909639
+            ]
+          ],
+          "alignment_translation": [
+            0.5096041339128625,
+            -0.017825424122109506,
+            1.0869406892854268
+          ]
+        },
+        "vggt_omega": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_from_world_inverted",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.00039726908001075297,
+          "ate_mean": 1.198284579535085e-06,
+          "ate_max": 6.348733969162992e-06,
+          "alignment_rotation": [
+            [
+              0.5303989299206084,
+              0.4738343297876911,
+              0.7029637281209635
+            ],
+            [
+              0.5019235290277366,
+              -0.8437760589974992,
+              0.19003876781065562
+            ],
+            [
+              0.6831908563113365,
+              0.25203767610676564,
+              -0.6853665177664321
+            ]
+          ],
+          "alignment_translation": [
+            0.5096042420685647,
+            -0.017825170833825215,
+            1.0869406438739972
+          ]
+        },
+        "pi3x": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.00010897613977119801,
+          "ate_mean": 1.1952268750341862e-06,
+          "ate_max": 6.606627388020604e-06,
+          "alignment_rotation": [
+            [
+              0.49953977542840383,
+              0.6225951355630754,
+              -0.6023581243231769
+            ],
+            [
+              -0.8261769523946876,
+              0.5515293805695591,
+              -0.11509555030662358
+            ],
+            [
+              0.26056027344314425,
+              0.5551492047564823,
+              0.7898846145871428
+            ]
+          ],
+          "alignment_translation": [
+            0.5096218165433541,
+            -0.017699165199401914,
+            1.0869621196102135
+          ]
+        },
+        "cut3r": {
+          "status": "ok",
+          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
+          "estimate_convention": "camera_to_world",
+          "num_frames": 50,
+          "align": "Sim3",
+          "scale": 0.00010355503000611547,
+          "ate_mean": 1.171452870446572e-06,
+          "ate_max": 6.629169424100106e-06,
+          "alignment_rotation": [
+            [
+              -0.4187387475290374,
+              -0.5308784481517761,
+              -0.7367672187372176
+            ],
+            [
+              0.888016848509345,
+              -0.4090911319813524,
+              -0.20992980373864592
+            ],
+            [
+              -0.18995772709038206,
+              -0.7421674467545566,
+              0.6427313147003795
+            ]
+          ],
+          "alignment_translation": [
+            0.5096043553364624,
+            -0.017825359170172923,
+            1.0869405209234804
+          ]
+        }
+      }
+    }
+  ]
+}

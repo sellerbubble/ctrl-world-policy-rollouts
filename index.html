@@ -577,8 +577,8 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 </section>
 <section id="camera-rays" class="part">
 <div class="part-head"><div><h2>Part 3. AgiBot Camera Pose and Ray Visualization</h2>
-<div class="part-desc">Interactive 3D trajectory visualizations for AgiBot episodes. Each case opens a Plotly page where the left panel animates three camera poses, image planes, and sampled rays in world coordinates; the right panel shows synchronized left-wrist, right-wrist, and head videos.</div></div>
-<div class="badge">3 interactive cases + synchronized videos</div></div>
+<div class="part-desc">Interactive 3D trajectory visualizations for AgiBot episodes. The ray pages animate camera poses, image planes, and sampled rays; the pose comparison page contrasts GT trajectories with VGGT, VGGT-Omega, Pi3X, and CUT3R before and after Sim3 alignment.</div></div>
+<div class="badge">ray cases + pose method comparison</div></div>
 <details open><summary>Camera ray trajectory cases <span>task327, task357, task453</span></summary><div class="detail-body">
 <p class="group-note">These pages check our current AgiBot camera extrinsic interpretation: translation is the camera center in world coordinates, rotation is world-to-camera, and rays are obtained by back-projecting pixels through intrinsics then rotating them into world coordinates.</p>
 <div class="direct-links"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open task327 ep0</a><a href="camera_ray_visualization/task357_ep0_stacked_views/">Open task357 ep0</a><a href="camera_ray_visualization/task453_ep0_stacked_views/">Open task453 ep0</a></div>
@@ -587,6 +587,10 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <a href="camera_ray_visualization/task357_ep0_stacked_views/"><b>Task 357 / Episode 0</b><span>New confirmation case, 50 sampled frames, stride 24</span></a>
 <a href="camera_ray_visualization/task453_ep0_stacked_views/"><b>Task 453 / Episode 0</b><span>New confirmation case, 50 sampled frames, stride 24</span></a>
 </div>
+</div></details>
+<details open><summary>Camera pose reconstruction comparison <span>raw and Sim3 aligned</span></summary><div class="detail-body">
+<p class="group-note">This page keeps both coordinate systems: raw method trajectories show each estimator's native scale and frame; Sim3 aligned trajectories show the same estimates after a similarity transform to GT, making trajectory shape errors easier to compare.</p>
+<div class="direct-links"><a href="camera_pose_trajectory_comparison/task327_357_453_pose_methods/">Open task327 / task357 / task453 pose comparison</a><a href="camera_pose_trajectory_comparison/task327_357_453_pose_methods/summary.json">summary.json</a></div>
 </div></details>
 </section>
 <section id="semantic-masks" class="part">
