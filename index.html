@@ -48,6 +48,10 @@ video { display:block; width:100%; min-width:240px; background:#111; border:1px 
 .case-meta span { background:var(--soft); border:1px solid var(--line); padding:5px 7px; }
 .case-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
 .case-actions a { text-decoration:none; border:1px solid var(--accent); color:var(--accent); padding:7px 9px; background:#fff; font-weight:700; font-size:12px; }
+.direct-links { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 16px; }
+.direct-links a { text-decoration:none; border:1px solid var(--ink); background:var(--paper); color:var(--ink); padding:8px 10px; font-weight:700; }
+.ray-case-card h3 a { color:var(--ink); text-decoration:none; }
+.ray-case-card h3 a:hover { color:var(--accent); text-decoration:underline; }
 .matrix-scroll { overflow-x:auto; border:1px solid var(--line); background:#fff; }
 .matrix { min-width:1120px; width:100%; border-collapse:collapse; }
 .matrix th,.matrix td { border:1px solid var(--line); padding:9px; vertical-align:top; }
@@ -582,21 +586,22 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <div class="badge">3 interactive cases + synchronized videos</div></div>
 <details open><summary>Camera ray trajectory cases <span>task327, task357, task453</span></summary><div class="detail-body">
 <p class="group-note">These pages check our current AgiBot camera extrinsic interpretation: translation is the camera center in world coordinates, rotation is world-to-camera, and rays are obtained by back-projecting pixels through intrinsics then rotating them into world coordinates.</p>
+<div class="direct-links"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open task327 ep0</a><a href="camera_ray_visualization/task357_ep0_stacked_views/">Open task357 ep0</a><a href="camera_ray_visualization/task453_ep0_stacked_views/">Open task453 ep0</a></div>
 <div class="case-grid">
 <article class="ray-case-card">
-<h3>Task 327 / Episode 0</h3>
+<h3><a href="camera_ray_visualization/task327_ep0_stacked_views/">Task 327 / Episode 0</a></h3>
 <video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task327_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
 <div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>original seed case</span></div>
 <div class="case-actions"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task327_ep0_stacked_views/summary.json">summary.json</a></div>
 </article>
 <article class="ray-case-card">
-<h3>Task 357 / Episode 0</h3>
+<h3><a href="camera_ray_visualization/task357_ep0_stacked_views/">Task 357 / Episode 0</a></h3>
 <video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task357_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
 <div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>new confirmation case</span></div>
 <div class="case-actions"><a href="camera_ray_visualization/task357_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task357_ep0_stacked_views/summary.json">summary.json</a></div>
 </article>
 <article class="ray-case-card">
-<h3>Task 453 / Episode 0</h3>
+<h3><a href="camera_ray_visualization/task453_ep0_stacked_views/">Task 453 / Episode 0</a></h3>
 <video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task453_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
 <div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>new confirmation case</span></div>
 <div class="case-actions"><a href="camera_ray_visualization/task453_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task453_ep0_stacked_views/summary.json">summary.json</a></div>
