@@ -23,8 +23,8 @@
     .row-head { display:flex; gap:16px; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
     h3 { margin:0; font-size:16px; }
     p { margin:0; color:var(--muted); font-size:12px; line-height:1.35; }
-    .plot-grid { display:grid; grid-template-columns: minmax(520px,1fr) minmax(520px,1fr); gap:12px; }
-    .plot { height:560px; min-width:0; border:1px solid var(--line); border-radius:7px; overflow:hidden; background:white; }
+    .plot-grid { display:grid; grid-template-columns: repeat(3, minmax(390px,1fr)); gap:12px; }
+    .plot { height:520px; min-width:0; border:1px solid var(--line); border-radius:7px; overflow:hidden; background:white; }
     .task-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:12px; }
     .task-links a { display:block; border:1px solid var(--line); border-radius:7px; padding:12px; color:var(--accent); text-decoration:none; background:#fbfdff; font-weight:700; }
     .task-links span { display:block; color:var(--muted); font-weight:500; font-size:12px; margin-top:4px; }
@@ -34,15 +34,15 @@
 <body>
 <header>
   <h1>AgiBot Pose Method Trajectory Comparison</h1>
-  <p class="note">Methods: VGGT, VGGT-Omega, Pi3X, CUT3R. The per-task pages keep both raw method coordinates and Sim3-aligned trajectories.</p>
+  <p class="note">Methods: VGGT, VGGT-Omega, Pi3X, CUT3R. The per-task pages keep raw method coordinates, Sim3-aligned trajectories, and additional per-projection 2D similarity alignments.</p>
   <nav><a href="index.html">Overview</a><a href="task327.html">Task 327</a><a href="task357.html">Task 357</a><a href="task453.html">Task 453</a></nav>
 </header>
 <main>
 <section class="overview">
   <h2>Split by task to avoid WebGL context limits</h2>
-  <p>This overview intentionally does not create all 18 3D plots at once. Open one task page below; each task page contains three cameras and six 3D plots, keeping browser WebGL usage stable.</p>
+  <p>This overview intentionally does not create every plot at once. Open one task page below; each task page contains raw projections, 3D Sim3 projections, and per-projection 2D similarity alignment for three cameras.</p>
   <div class="task-links">
-    <a href="task327.html">Task 327 / Episode 0<span>raw + Sim3 aligned trajectories for left wrist, right wrist, and head</span></a><a href="task357.html">Task 357 / Episode 0<span>raw + Sim3 aligned trajectories for left wrist, right wrist, and head</span></a><a href="task453.html">Task 453 / Episode 0<span>raw + Sim3 aligned trajectories for left wrist, right wrist, and head</span></a>
+    <a href="task327.html">Task 327 / Episode 0<span>raw + Sim3 aligned + 2D Sim aligned trajectories for left wrist, right wrist, and head</span></a><a href="task357.html">Task 357 / Episode 0<span>raw + Sim3 aligned + 2D Sim aligned trajectories for left wrist, right wrist, and head</span></a><a href="task453.html">Task 453 / Episode 0<span>raw + Sim3 aligned + 2D Sim aligned trajectories for left wrist, right wrist, and head</span></a>
   </div>
 </section>
 </main>
