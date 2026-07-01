@@ -40,18 +40,13 @@ video { display:block; width:100%; min-width:240px; background:#111; border:1px 
 .metric-good { color:#116329; font-weight:700; }
 .metric-bad { color:#9a3412; font-weight:700; }
 .trend { width:min(900px,100%); border:1px solid var(--line); background:#fff; display:block; margin:10px 0 16px; }
-.case-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
-.ray-case-card { border:1px solid var(--line); background:#fff; padding:12px; display:flex; flex-direction:column; gap:10px; min-width:0; }
-.ray-case-card h3 { margin:0; font-size:15px; line-height:1.25; }
-.case-video { width:100%; min-width:0; aspect-ratio:16/3; object-fit:contain; border:1px solid #111; background:#111; }
-.case-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; color:var(--muted); font-size:12px; }
-.case-meta span { background:var(--soft); border:1px solid var(--line); padding:5px 7px; }
-.case-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
-.case-actions a { text-decoration:none; border:1px solid var(--accent); color:var(--accent); padding:7px 9px; background:#fff; font-weight:700; font-size:12px; }
 .direct-links { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 16px; }
 .direct-links a { text-decoration:none; border:1px solid var(--ink); background:var(--paper); color:var(--ink); padding:8px 10px; font-weight:700; }
-.ray-case-card h3 a { color:var(--ink); text-decoration:none; }
-.ray-case-card h3 a:hover { color:var(--accent); text-decoration:underline; }
+.case-link-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+.case-link-list a { display:block; text-decoration:none; background:#fff; border:1px solid var(--line); padding:12px; color:var(--ink); }
+.case-link-list a:hover { border-color:var(--accent); }
+.case-link-list b { display:block; margin-bottom:4px; }
+.case-link-list span { display:block; color:var(--muted); font-size:12px; }
 .matrix-scroll { overflow-x:auto; border:1px solid var(--line); background:#fff; }
 .matrix { min-width:1120px; width:100%; border-collapse:collapse; }
 .matrix th,.matrix td { border:1px solid var(--line); padding:9px; vertical-align:top; }
@@ -60,7 +55,7 @@ video { display:block; width:100%; min-width:240px; background:#111; border:1px 
 .sample-head b { color:var(--ink); display:block; font-size:13px; }
 .cell-meta { display:flex; flex-wrap:wrap; gap:8px 12px; color:var(--muted); font-size:12px; margin-bottom:8px; }
 footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; color:var(--muted); font-size:12px; }
-@media (max-width: 1050px) { .case-grid { grid-template-columns:1fr; } .case-video { aspect-ratio:16/4.2; } }
+@media (max-width: 1050px) { .case-link-list { grid-template-columns:1fr; } }
 @media (max-width: 850px) { header,.part-head { display:block; } nav { justify-content:flex-start; margin-top:16px; } .fact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .video-grid { grid-template-columns:1fr; } .badge { display:inline-block; margin-top:10px; } }
 </style></head><body><main class="page">
 <header><div><div class="brand">Ctrl-World rollout visual review</div>
@@ -587,25 +582,10 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <details open><summary>Camera ray trajectory cases <span>task327, task357, task453</span></summary><div class="detail-body">
 <p class="group-note">These pages check our current AgiBot camera extrinsic interpretation: translation is the camera center in world coordinates, rotation is world-to-camera, and rays are obtained by back-projecting pixels through intrinsics then rotating them into world coordinates.</p>
 <div class="direct-links"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open task327 ep0</a><a href="camera_ray_visualization/task357_ep0_stacked_views/">Open task357 ep0</a><a href="camera_ray_visualization/task453_ep0_stacked_views/">Open task453 ep0</a></div>
-<div class="case-grid">
-<article class="ray-case-card">
-<h3><a href="camera_ray_visualization/task327_ep0_stacked_views/">Task 327 / Episode 0</a></h3>
-<video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task327_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
-<div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>original seed case</span></div>
-<div class="case-actions"><a href="camera_ray_visualization/task327_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task327_ep0_stacked_views/summary.json">summary.json</a></div>
-</article>
-<article class="ray-case-card">
-<h3><a href="camera_ray_visualization/task357_ep0_stacked_views/">Task 357 / Episode 0</a></h3>
-<video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task357_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
-<div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>new confirmation case</span></div>
-<div class="case-actions"><a href="camera_ray_visualization/task357_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task357_ep0_stacked_views/summary.json">summary.json</a></div>
-</article>
-<article class="ray-case-card">
-<h3><a href="camera_ray_visualization/task453_ep0_stacked_views/">Task 453 / Episode 0</a></h3>
-<video class="case-video" controls preload="metadata" muted loop playsinline><source src="camera_ray_visualization/task453_ep0_stacked_views/three_view_sampled_mosaic.mp4" type="video/mp4"></video>
-<div class="case-meta"><span>50 sampled frames</span><span>stride 24</span><span>left / right / head</span><span>new confirmation case</span></div>
-<div class="case-actions"><a href="camera_ray_visualization/task453_ep0_stacked_views/">Open interactive page</a><a href="camera_ray_visualization/task453_ep0_stacked_views/summary.json">summary.json</a></div>
-</article>
+<div class="case-link-list">
+<a href="camera_ray_visualization/task327_ep0_stacked_views/"><b>Task 327 / Episode 0</b><span>Original seed case, 50 sampled frames, stride 24</span></a>
+<a href="camera_ray_visualization/task357_ep0_stacked_views/"><b>Task 357 / Episode 0</b><span>New confirmation case, 50 sampled frames, stride 24</span></a>
+<a href="camera_ray_visualization/task453_ep0_stacked_views/"><b>Task 453 / Episode 0</b><span>New confirmation case, 50 sampled frames, stride 24</span></a>
 </div>
 </div></details>
 </section>
