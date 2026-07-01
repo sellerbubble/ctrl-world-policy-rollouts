@@ -5,15 +5,15 @@
   "max_frames": 50,
   "rendered_frames": 50,
   "image_plane_width": 44,
-  "image_plane_distance": 0.4,
+  "image_plane_distance": 0.6,
   "visual_center_spread": 3.2,
   "mosaic_fps": 8.0,
   "projection_convention": "R_w2c = extrinsic[:3,:3], C_world = extrinsic[:3,3], ray_world = R_w2c.T @ normalize([(u-cx)/fx, (v-cy)/fy, 1])",
-  "output_html": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/two_extra_stacked_views/task453_ep0_stacked_views/camera_ray_trajectory_animation.html",
-  "output_mosaic_video": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/two_extra_stacked_views/task453_ep0_stacked_views/three_view_sampled_mosaic.mp4",
+  "output_html": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/stacked_views_3cases_1p5x/task453_ep0_stacked_views/camera_ray_trajectory_animation.html",
+  "output_mosaic_video": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/stacked_views_3cases_1p5x/task453_ep0_stacked_views/three_view_sampled_mosaic.mp4",
   "output_single_view_videos": {
-    "hand_left": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/two_extra_stacked_views/task453_ep0_stacked_views/hand_left_sampled.mp4",
-    "hand_right": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/two_extra_stacked_views/task453_ep0_stacked_views/hand_right_sampled.mp4",
-    "head": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/two_extra_stacked_views/task453_ep0_stacked_views/head_sampled.mp4"
+    "hand_left": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/stacked_views_3cases_1p5x/task453_ep0_stacked_views/hand_left_sampled.mp4",
+    "hand_right": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/stacked_views_3cases_1p5x/task453_ep0_stacked_views/hand_right_sampled.mp4",
+    "head": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_camera_ray_visualization_20260701/stacked_views_3cases_1p5x/task453_ep0_stacked_views/head_sampled.mp4"
   }
 }
