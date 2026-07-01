@@ -1,0 +1,1 @@
+GroundingDINO proposals filtered by same/compatible-label crop matching. Columns are baseline, all GroundingDINO proposals, GDINO+SigLIP2 matches, and GDINO+DINOv2 matches.\n

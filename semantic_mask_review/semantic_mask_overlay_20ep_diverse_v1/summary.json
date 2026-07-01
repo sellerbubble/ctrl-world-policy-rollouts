@@ -1,0 +1,302 @@
+{
+  "cases": [
+    {
+      "episode_index": 6141,
+      "task": "Open the freezer door.",
+      "episode_len": 38,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        37
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_006141_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 8909,
+      "task": "Smooth the upper left side of the clothes with the held steam iron using the right arm.",
+      "episode_len": 17,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_008909_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 9319,
+      "task": "Release the held clothes with the left arm.",
+      "episode_len": 16,
+      "annotated_frame_ids": [
+        0,
+        8,
+        15
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_009319_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 22642,
+      "task": "Lift the hand cream on the table with the left arm.",
+      "episode_len": 24,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        23
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_022642_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 31535,
+      "task": "Extract the bar spoon from the shaker cup in the left arm with the right arm.",
+      "episode_len": 22,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        21
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_031535_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 31693,
+      "task": "Pour the water from the kettle into the shaker cup on the table with the left arm.",
+      "episode_len": 67,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40,
+        48,
+        56,
+        64,
+        66
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_031693_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 33171,
+      "task": "Place the marinated egg held in the left arm into the left blue target box.",
+      "episode_len": 22,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        21
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_033171_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 35153,
+      "task": "Pass the packaged concentrated coffee liquid with both hands.",
+      "episode_len": 19,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        18
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_035153_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 35430,
+      "task": "Press the memory module with both arms in coordination.",
+      "episode_len": 50,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40,
+        48,
+        49
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_035430_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 48000,
+      "task": "Place the plastic wrap held in the right arm into the right blue target box.",
+      "episode_len": 20,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        19
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_048000_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 48820,
+      "task": "Place the toothpick held in the right arm into the right blue target box.",
+      "episode_len": 20,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        19
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_048820_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 49007,
+      "task": "Pass the trash bag with both hands.",
+      "episode_len": 19,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        18
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_049007_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 55480,
+      "task": "Place the whiteboard eraser held in the left arm into the gray felt bag on the left side of the cash register.",
+      "episode_len": 42,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40,
+        41
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_055480_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 59157,
+      "task": "Place the white box skincare products held in the left arm into the green felt bag on the left side of the cash register.",
+      "episode_len": 43,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40,
+        42
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_059157_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 65729,
+      "task": "Press the switch button of the held orange disinfectant gun with the left arm.",
+      "episode_len": 53,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        24,
+        32,
+        40,
+        48,
+        52
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_065729_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 68437,
+      "task": "Place the held cloth on the countertop with the left arm.",
+      "episode_len": 14,
+      "annotated_frame_ids": [
+        0,
+        8,
+        13
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_068437_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 77723,
+      "task": "Pick up the whole wheat toast from the slot after taking the white toaster.",
+      "episode_len": 22,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        21
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_077723_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 79447,
+      "task": "Lift matsutake fresh seasoning with the right arm.",
+      "episode_len": 22,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        21
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_079447_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 94159,
+      "task": "Pick up the green kettle with left arm.",
+      "episode_len": 22,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16,
+        21
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_094159_siglip_mask_keep_previous_overlay.mp4"
+    },
+    {
+      "episode_index": 95744,
+      "task": "Place the held green kettle under the faucet with right arm.",
+      "episode_len": 17,
+      "annotated_frame_ids": [
+        0,
+        8,
+        16
+      ],
+      "mask_key": "siglip_mask_keep",
+      "mask_temporal_mode": "previous",
+      "video": "episode_095744_siglip_mask_keep_previous_overlay.mp4"
+    }
+  ]
+}

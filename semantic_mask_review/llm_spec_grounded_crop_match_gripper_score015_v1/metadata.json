@@ -1,0 +1,5241 @@
+{
+  "grounding_model": "/mnt/workspace-20260313/users/liwenhao/models/grounding-dino-tiny",
+  "siglip_model": "/mnt/workspace/users/liwenhao/ckpt/siglip2-large-patch16-256",
+  "dino_model": "/mnt/workspace/users/liwenhao/ckpt/dinov2-large",
+  "object_spec_path": "/mnt/workspace-20260313/users/liwenhao/ctrl_world_runs/llm_object_spec_probe_v2_fewshot/object_specs.json",
+  "force_gripper_prompts": true,
+  "gripper_prompts": [
+    "left gripper",
+    "right gripper",
+    "robot gripper"
+  ],
+  "score_threshold": 0.15,
+  "siglip_threshold": 0.88,
+  "dino_threshold": 0.45,
+  "max_pairs_per_matcher": 8,
+  "cases": [
+    {
+      "case": 1,
+      "episode_index": 0,
+      "frame_id": 12,
+      "task": "Pick up the permanent magnet ingot from the conveyor belt with right arm.",
+      "prompts": [
+        "permanent magnet ingot",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25458770990371704,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24122944474220276,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.22117400169372559,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.2123061865568161,
+            "box": [
+              0,
+              39,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15554194152355194,
+            "box": [
+              117,
+              175,
+              245,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.22161386907100677,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.21154429018497467,
+            "box": [
+              0,
+              99,
+              317,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.20511282980442047,
+            "box": [
+              0,
+              99,
+              317,
+              191
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.19411735236644745,
+            "box": [
+              0,
+              98,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.18954940140247345,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18813206255435944,
+            "box": [
+              0,
+              99,
+              317,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18688812851905823,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1862429529428482,
+            "box": [
+              0,
+              17,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.1659301519393921,
+            "box": [
+              54,
+              15,
+              100,
+              32
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16486017405986786,
+            "box": [
+              0,
+              17,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15387842059135437,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15276668965816498,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1518215537071228,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.2440367192029953,
+            "box": [
+              0,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.2433062344789505,
+            "box": [
+              0,
+              80,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.23072069883346558,
+            "box": [
+              0,
+              82,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2301608920097351,
+            "box": [
+              0,
+              82,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2198956161737442,
+            "box": [
+              0,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.21780124306678772,
+            "box": [
+              0,
+              81,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.2141512632369995,
+            "box": [
+              0,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.18436606228351593,
+            "box": [
+              0,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.17768974602222443,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16999714076519012,
+            "box": [
+              22,
+              139,
+              118,
+              181
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16954092681407928,
+            "box": [
+              22,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16297176480293274,
+            "box": [
+              0,
+              91,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15950167179107666,
+            "box": [
+              22,
+              139,
+              118,
+              181
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.15535347163677216,
+            "box": [
+              0,
+              0,
+              319,
+              83
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15454185009002686,
+            "box": [
+              22,
+              81,
+              118,
+              181
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 1,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9340851306915283
+        },
+        {
+          "left_index": 2,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.9340851306915283
+        },
+        {
+          "left_index": 0,
+          "right_index": 16,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.926018476486206
+        },
+        {
+          "left_index": 1,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.926018476486206
+        },
+        {
+          "left_index": 2,
+          "right_index": 17,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.926018476486206
+        },
+        {
+          "left_index": 3,
+          "right_index": 5,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "permanent magnet ingot",
+          "right_label": "permanent magnet ingot",
+          "similarity": 0.9250901341438293
+        },
+        {
+          "left_index": 0,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9204013347625732
+        },
+        {
+          "left_index": 0,
+          "right_index": 14,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9204013347625732
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 1,
+          "right_index": 32,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.5362526178359985
+        },
+        {
+          "left_index": 1,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.5318389534950256
+        },
+        {
+          "left_index": 2,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.5318389534950256
+        },
+        {
+          "left_index": 0,
+          "right_index": 28,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5296244025230408
+        },
+        {
+          "left_index": 0,
+          "right_index": 16,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5105611085891724
+        },
+        {
+          "left_index": 1,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.5105611085891724
+        },
+        {
+          "left_index": 2,
+          "right_index": 17,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.5105611085891724
+        },
+        {
+          "left_index": 0,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.4651492238044739
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25458770990371704,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24122944474220276,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.22117400169372559,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.2123061865568161,
+            "box": [
+              0,
+              39,
+              320,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "permanent magnet ingot",
+            "score": 0.22161386907100677,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.18954940140247345,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18688812851905823,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1862429529428482,
+            "box": [
+              0,
+              17,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16486017405986786,
+            "box": [
+              0,
+              17,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15387842059135437,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15276668965816498,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1518215537071228,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": []
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25458770990371704,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24122944474220276,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.22117400169372559,
+            "box": [
+              0,
+              39,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "right gripper",
+            "score": 0.18954940140247345,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18688812851905823,
+            "box": [
+              0,
+              18,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1862429529428482,
+            "box": [
+              0,
+              17,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15387842059135437,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15276668965816498,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1518215537071228,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.16954092681407928,
+            "box": [
+              22,
+              81,
+              118,
+              182
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15454185009002686,
+            "box": [
+              22,
+              81,
+              118,
+              181
+            ]
+          }
+        ]
+      },
+      "image": "case_01_episode_0_grounded_crop_match.png"
+    },
+    {
+      "case": 2,
+      "episode_index": 8512,
+      "frame_id": 12,
+      "task": "Stretch the sleeve of the garment with the left arm.",
+      "prompts": [
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.17219066619873047,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16866518557071686,
+            "box": [
+              85,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16689200699329376,
+            "box": [
+              85,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1627633273601532,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16201753914356232,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16056686639785767,
+            "box": [
+              0,
+              24,
+              320,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15523990988731384,
+            "box": [
+              0,
+              23,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15429438650608063,
+            "box": [
+              223,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15354225039482117,
+            "box": [
+              5,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15234220027923584,
+            "box": [
+              88,
+              99,
+              320,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15165328979492188,
+            "box": [
+              4,
+              99,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2392742782831192,
+            "box": [
+              27,
+              103,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2018132358789444,
+            "box": [
+              29,
+              103,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.192920982837677,
+            "box": [
+              30,
+              103,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.18842440843582153,
+            "box": [
+              8,
+              102,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.178367480635643,
+            "box": [
+              2,
+              103,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16419582068920135,
+            "box": [
+              35,
+              102,
+              134,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.29012346267700195,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2645929157733917,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.2506631910800934,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1526949554681778,
+            "box": [
+              85,
+              102,
+              207,
+              191
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 9,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.9202722311019897
+        },
+        {
+          "left_index": 10,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9197999835014343
+        },
+        {
+          "left_index": 8,
+          "right_index": 14,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.91327965259552
+        },
+        {
+          "left_index": 2,
+          "right_index": 14,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.896926999092102
+        },
+        {
+          "left_index": 3,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.8933799266815186
+        },
+        {
+          "left_index": 8,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.89314204454422
+        },
+        {
+          "left_index": 9,
+          "right_index": 13,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.8843913078308105
+        },
+        {
+          "left_index": 3,
+          "right_index": 13,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.8839317560195923
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 7,
+          "right_index": 16,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.498299241065979
+        },
+        {
+          "left_index": 8,
+          "right_index": 14,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.476990282535553
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "right gripper",
+            "score": 0.16689200699329376,
+            "box": [
+              85,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1627633273601532,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15354225039482117,
+            "box": [
+              5,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15234220027923584,
+            "box": [
+              88,
+              99,
+              320,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15165328979492188,
+            "box": [
+              4,
+              99,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2392742782831192,
+            "box": [
+              27,
+              103,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2018132358789444,
+            "box": [
+              29,
+              103,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.192920982837677,
+            "box": [
+              30,
+              103,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.18842440843582153,
+            "box": [
+              8,
+              102,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.178367480635643,
+            "box": [
+              2,
+              103,
+              319,
+              192
+            ]
+          }
+        ],
+        "head": []
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.15429438650608063,
+            "box": [
+              223,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15354225039482117,
+            "box": [
+              5,
+              99,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "right gripper",
+            "score": 0.18842440843582153,
+            "box": [
+              8,
+              102,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16419582068920135,
+            "box": [
+              35,
+              102,
+              134,
+              191
+            ]
+          }
+        ],
+        "head": []
+      },
+      "image": "case_02_episode_8512_grounded_crop_match.png"
+    },
+    {
+      "case": 3,
+      "episode_index": 14171,
+      "frame_id": 12,
+      "task": "Pick up the black frying pan in the sink with left arm.",
+      "prompts": [
+        "black frying pan",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "black frying pan",
+            "score": 0.39791133999824524,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.3077889680862427,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2913466691970825,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.28610706329345703,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.24622201919555664,
+            "box": [
+              27,
+              69,
+              317,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.23334164917469025,
+            "box": [
+              26,
+              69,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.21341033279895782,
+            "box": [
+              26,
+              69,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.20702703297138214,
+            "box": [
+              27,
+              69,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.1956494003534317,
+            "box": [
+              124,
+              69,
+              242,
+              182
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.18894413113594055,
+            "box": [
+              0,
+              0,
+              73,
+              88
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16223552823066711,
+            "box": [
+              63,
+              69,
+              313,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16196763515472412,
+            "box": [
+              26,
+              102,
+              134,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16178572177886963,
+            "box": [
+              64,
+              69,
+              313,
+              192
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.1599857658147812,
+            "box": [
+              64,
+              68,
+              314,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15963438153266907,
+            "box": [
+              65,
+              69,
+              313,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.15233644843101501,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "black frying pan",
+            "score": 0.34347641468048096,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.270506352186203,
+            "box": [
+              25,
+              29,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.24749934673309326,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.23522908985614777,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.23206542432308197,
+            "box": [
+              29,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.21296364068984985,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.20450645685195923,
+            "box": [
+              33,
+              101,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.19472363591194153,
+            "box": [
+              33,
+              100,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19394835829734802,
+            "box": [
+              24,
+              29,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18305286765098572,
+            "box": [
+              26,
+              29,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17811617255210876,
+            "box": [
+              26,
+              29,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.17495909333229065,
+            "box": [
+              30,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.15610544383525848,
+            "box": [
+              0,
+              0,
+              184,
+              129
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "black frying pan",
+            "score": 0.24093425273895264,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.21052297949790955,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.20640495419502258,
+            "box": [
+              72,
+              104,
+              207,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.18899495899677277,
+            "box": [
+              45,
+              104,
+              207,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.18890352547168732,
+            "box": [
+              72,
+              137,
+              168,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18314431607723236,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.17816312611103058,
+            "box": [
+              189,
+              43,
+              319,
+              157
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17458848655223846,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17300179600715637,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1720973253250122,
+            "box": [
+              0,
+              16,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16609391570091248,
+            "box": [
+              190,
+              42,
+              296,
+              158
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.16502968966960907,
+            "box": [
+              189,
+              68,
+              320,
+              157
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16185854375362396,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.15808072686195374,
+            "box": [
+              0,
+              71,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15369686484336853,
+            "box": [
+              190,
+              43,
+              296,
+              157
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15046225488185883,
+            "box": [
+              190,
+              43,
+              296,
+              158
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 4,
+          "right_index": 29,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.882924497127533
+        },
+        {
+          "left_index": 7,
+          "right_index": 38,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.882924497127533
+        },
+        {
+          "left_index": 0,
+          "right_index": 29,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.8807369470596313
+        },
+        {
+          "left_index": 1,
+          "right_index": 34,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.8807369470596313
+        },
+        {
+          "left_index": 2,
+          "right_index": 36,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.8807369470596313
+        },
+        {
+          "left_index": 3,
+          "right_index": 38,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.8807369470596313
+        },
+        {
+          "left_index": 15,
+          "right_index": 29,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.8807369470596313
+        },
+        {
+          "left_index": 5,
+          "right_index": 34,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.8802856206893921
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 0,
+          "right_index": 29,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.6852748394012451
+        },
+        {
+          "left_index": 1,
+          "right_index": 34,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.6852748394012451
+        },
+        {
+          "left_index": 2,
+          "right_index": 36,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.6852748394012451
+        },
+        {
+          "left_index": 3,
+          "right_index": 38,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.6852748394012451
+        },
+        {
+          "left_index": 15,
+          "right_index": 29,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.6852748394012451
+        },
+        {
+          "left_index": 0,
+          "right_index": 30,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "black frying pan",
+          "right_label": "black frying pan",
+          "similarity": 0.6746013164520264
+        },
+        {
+          "left_index": 1,
+          "right_index": 37,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.6746013164520264
+        },
+        {
+          "left_index": 2,
+          "right_index": 41,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.6746013164520264
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "black frying pan",
+            "score": 0.39791133999824524,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.3077889680862427,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2913466691970825,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.28610706329345703,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.24622201919555664,
+            "box": [
+              27,
+              69,
+              317,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.23334164917469025,
+            "box": [
+              26,
+              69,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.20702703297138214,
+            "box": [
+              27,
+              69,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.15233644843101501,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          }
+        ],
+        "right wrist": [],
+        "head": [
+          {
+            "label": "black frying pan",
+            "score": 0.24093425273895264,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18314431607723236,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17458848655223846,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1720973253250122,
+            "box": [
+              0,
+              16,
+              319,
+              192
+            ]
+          }
+        ]
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "black frying pan",
+            "score": 0.39791133999824524,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.3077889680862427,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2913466691970825,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.28610706329345703,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.15233644843101501,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          }
+        ],
+        "right wrist": [],
+        "head": [
+          {
+            "label": "black frying pan",
+            "score": 0.24093425273895264,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black frying pan",
+            "score": 0.21052297949790955,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18314431607723236,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17458848655223846,
+            "box": [
+              0,
+              16,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17300179600715637,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1720973253250122,
+            "box": [
+              0,
+              16,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16185854375362396,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          }
+        ]
+      },
+      "image": "case_03_episode_14171_grounded_crop_match.png"
+    },
+    {
+      "case": 4,
+      "episode_index": 17913,
+      "frame_id": 12,
+      "task": "Place the held hand cream in the drawer with the right arm.",
+      "prompts": [
+        "hand cream",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.29637959599494934,
+            "box": [
+              21,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.27681660652160645,
+            "box": [
+              21,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.25573256611824036,
+            "box": [
+              21,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.22067005932331085,
+            "box": [
+              20,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.19614408910274506,
+            "box": [
+              0,
+              100,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1898701936006546,
+            "box": [
+              119,
+              174,
+              249,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1884426325559616,
+            "box": [
+              23,
+              101,
+              133,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17933763563632965,
+            "box": [
+              23,
+              101,
+              133,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17435477674007416,
+            "box": [
+              119,
+              174,
+              249,
+              192
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.17325767874717712,
+            "box": [
+              23,
+              101,
+              133,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16722747683525085,
+            "box": [
+              24,
+              101,
+              133,
+              192
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1668606996536255,
+            "box": [
+              119,
+              174,
+              249,
+              192
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16538181900978088,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15129606425762177,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15103866159915924,
+            "box": [
+              22,
+              100,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.21986888349056244,
+            "box": [
+              22,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.21930955350399017,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.21501025557518005,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.21472151577472687,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.21058833599090576,
+            "box": [
+              23,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2061312198638916,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19425103068351746,
+            "box": [
+              22,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.176799014210701,
+            "box": [
+              21,
+              99,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1720106601715088,
+            "box": [
+              0,
+              0,
+              212,
+              179
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1691794991493225,
+            "box": [
+              0,
+              0,
+              212,
+              179
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.1690395027399063,
+            "box": [
+              0,
+              0,
+              213,
+              180
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16087092459201813,
+            "box": [
+              0,
+              0,
+              212,
+              179
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15375010669231415,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.1522839367389679,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.26222771406173706,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2604821026325226,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.2555159628391266,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.22784565389156342,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.18918658792972565,
+            "box": [
+              169,
+              92,
+              187,
+              111
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16480332612991333,
+            "box": [
+              192,
+              95,
+              218,
+              112
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.158662348985672,
+            "box": [
+              0,
+              111,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1521085798740387,
+            "box": [
+              0,
+              111,
+              320,
+              191
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 10,
+          "right_index": 28,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.9549863338470459
+        },
+        {
+          "left_index": 6,
+          "right_index": 27,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9512089490890503
+        },
+        {
+          "left_index": 4,
+          "right_index": 22,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.914314866065979
+        },
+        {
+          "left_index": 16,
+          "right_index": 29,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9108450412750244
+        },
+        {
+          "left_index": 17,
+          "right_index": 31,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.9108450412750244
+        },
+        {
+          "left_index": 18,
+          "right_index": 32,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.9108450412750244
+        },
+        {
+          "left_index": 20,
+          "right_index": 30,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9108450412750244
+        },
+        {
+          "left_index": 0,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9089363813400269
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 10,
+          "right_index": 28,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.7280114889144897
+        },
+        {
+          "left_index": 6,
+          "right_index": 27,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.721743106842041
+        },
+        {
+          "left_index": 12,
+          "right_index": 28,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.6155505180358887
+        },
+        {
+          "left_index": 13,
+          "right_index": 27,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.6155505180358887
+        },
+        {
+          "left_index": 12,
+          "right_index": 22,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.48563316464424133
+        },
+        {
+          "left_index": 13,
+          "right_index": 15,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.473821222782135
+        },
+        {
+          "left_index": 12,
+          "right_index": 25,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "hand cream",
+          "right_label": "hand cream",
+          "similarity": 0.4566086232662201
+        },
+        {
+          "left_index": 14,
+          "right_index": 21,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.45371341705322266
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.29637959599494934,
+            "box": [
+              21,
+              100,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.19614408910274506,
+            "box": [
+              0,
+              100,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1884426325559616,
+            "box": [
+              23,
+              101,
+              133,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16722747683525085,
+            "box": [
+              24,
+              101,
+              133,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.21986888349056244,
+            "box": [
+              22,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.21930955350399017,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.21501025557518005,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.21472151577472687,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2061312198638916,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.176799014210701,
+            "box": [
+              21,
+              99,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15375010669231415,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.1522839367389679,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.26222771406173706,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2604821026325226,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.2555159628391266,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.22784565389156342,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.1884426325559616,
+            "box": [
+              23,
+              101,
+              133,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16722747683525085,
+            "box": [
+              24,
+              101,
+              133,
+              192
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.16538181900978088,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15129606425762177,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15103866159915924,
+            "box": [
+              22,
+              100,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.21986888349056244,
+            "box": [
+              22,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19425103068351746,
+            "box": [
+              22,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.176799014210701,
+            "box": [
+              21,
+              99,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.1690395027399063,
+            "box": [
+              0,
+              0,
+              213,
+              180
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15375010669231415,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          },
+          {
+            "label": "hand cream",
+            "score": 0.1522839367389679,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          }
+        ],
+        "head": []
+      },
+      "image": "case_04_episode_17913_grounded_crop_match.png"
+    },
+    {
+      "case": 5,
+      "episode_index": 27400,
+      "frame_id": 12,
+      "task": "Pick up the small pack of black tissues on the table with the right arm.",
+      "prompts": [
+        "black tissues",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2749236822128296,
+            "box": [
+              29,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24506433308124542,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23535661399364471,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.17893490195274353,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.17737488448619843,
+            "box": [
+              48,
+              42,
+              101,
+              70
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1688351333141327,
+            "box": [
+              48,
+              42,
+              101,
+              70
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1653110682964325,
+            "box": [
+              48,
+              42,
+              101,
+              70
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.1652926355600357,
+            "box": [
+              224,
+              8,
+              258,
+              44
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16348057985305786,
+            "box": [
+              48,
+              42,
+              101,
+              70
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25067681074142456,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2115982621908188,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.20043693482875824,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.18116293847560883,
+            "box": [
+              28,
+              97,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17929834127426147,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1682371199131012,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16624704003334045,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.16524052619934082,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.16320480406284332,
+            "box": [
+              261,
+              57,
+              306,
+              96
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "robot gripper",
+            "score": 0.19497214257717133,
+            "box": [
+              109,
+              18,
+              317,
+              159
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1853143870830536,
+            "box": [
+              0,
+              76,
+              319,
+              176
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17552103102207184,
+            "box": [
+              0,
+              76,
+              319,
+              176
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.170535609126091,
+            "box": [
+              193,
+              87,
+              319,
+              166
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16415686905384064,
+            "box": [
+              0,
+              76,
+              319,
+              177
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.16104643046855927,
+            "box": [
+              0,
+              18,
+              319,
+              179
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16060702502727509,
+            "box": [
+              0,
+              0,
+              319,
+              180
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.16056258976459503,
+            "box": [
+              0,
+              76,
+              319,
+              177
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1581379473209381,
+            "box": [
+              109,
+              18,
+              314,
+              156
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15807965397834778,
+            "box": [
+              109,
+              18,
+              313,
+              156
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.15759052336215973,
+            "box": [
+              0,
+              76,
+              163,
+              176
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1558634638786316,
+            "box": [
+              110,
+              18,
+              311,
+              88
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15570686757564545,
+            "box": [
+              0,
+              76,
+              163,
+              177
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15272536873817444,
+            "box": [
+              0,
+              0,
+              320,
+              181
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15089192986488342,
+            "box": [
+              0,
+              18,
+              319,
+              178
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15040506422519684,
+            "box": [
+              194,
+              87,
+              319,
+              166
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 3,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "black tissues",
+          "right_label": "black tissues",
+          "similarity": 0.9439235925674438
+        },
+        {
+          "left_index": 1,
+          "right_index": 10,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9353209137916565
+        },
+        {
+          "left_index": 0,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9320048093795776
+        },
+        {
+          "left_index": 16,
+          "right_index": 23,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "black tissues",
+          "right_label": "black tissues",
+          "similarity": 0.9149156808853149
+        },
+        {
+          "left_index": 13,
+          "right_index": 32,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9140594005584717
+        },
+        {
+          "left_index": 13,
+          "right_index": 24,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9139971733093262
+        },
+        {
+          "left_index": 14,
+          "right_index": 31,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9101146459579468
+        },
+        {
+          "left_index": 2,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.9011548757553101
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 2,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.7652156352996826
+        },
+        {
+          "left_index": 0,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.7582482099533081
+        },
+        {
+          "left_index": 1,
+          "right_index": 10,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.7533729076385498
+        },
+        {
+          "left_index": 3,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "black tissues",
+          "right_label": "black tissues",
+          "similarity": 0.7262544631958008
+        },
+        {
+          "left_index": 14,
+          "right_index": 31,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.5275808572769165
+        },
+        {
+          "left_index": 13,
+          "right_index": 24,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5217699408531189
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2749236822128296,
+            "box": [
+              29,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24506433308124542,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23535661399364471,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.17893490195274353,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25067681074142456,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2115982621908188,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.20043693482875824,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.18116293847560883,
+            "box": [
+              28,
+              97,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17929834127426147,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1682371199131012,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.16524052619934082,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "black tissues",
+            "score": 0.16104643046855927,
+            "box": [
+              0,
+              18,
+              319,
+              179
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16060702502727509,
+            "box": [
+              0,
+              0,
+              319,
+              180
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15272536873817444,
+            "box": [
+              0,
+              0,
+              320,
+              181
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.15089192986488342,
+            "box": [
+              0,
+              18,
+              319,
+              178
+            ]
+          }
+        ]
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2749236822128296,
+            "box": [
+              29,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.24506433308124542,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23535661399364471,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.17893490195274353,
+            "box": [
+              28,
+              99,
+              319,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.25067681074142456,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2115982621908188,
+            "box": [
+              28,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.20043693482875824,
+            "box": [
+              29,
+              98,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "black tissues",
+            "score": 0.18116293847560883,
+            "box": [
+              28,
+              97,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17929834127426147,
+            "box": [
+              0,
+              0,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1682371199131012,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.16060702502727509,
+            "box": [
+              0,
+              0,
+              319,
+              180
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15272536873817444,
+            "box": [
+              0,
+              0,
+              320,
+              181
+            ]
+          }
+        ]
+      },
+      "image": "case_05_episode_27400_grounded_crop_match.png"
+    },
+    {
+      "case": 6,
+      "episode_index": 41000,
+      "frame_id": 12,
+      "task": "Dip the tea bag into the cup and lift it out.",
+      "prompts": [
+        "tea bag",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.22586478292942047,
+            "box": [
+              154,
+              61,
+              221,
+              151
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2073151171207428,
+            "box": [
+              154,
+              61,
+              221,
+              151
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18935728073120117,
+            "box": [
+              154,
+              61,
+              221,
+              150
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18122081458568573,
+            "box": [
+              36,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1738823652267456,
+            "box": [
+              35,
+              100,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1728566288948059,
+            "box": [
+              36,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16589076817035675,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15340560674667358,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.24090896546840668,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23241274058818817,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.22733360528945923,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17897929251194,
+            "box": [
+              0,
+              31,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1772947907447815,
+            "box": [
+              0,
+              30,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17175428569316864,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17141498625278473,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17116278409957886,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16577692329883575,
+            "box": [
+              96,
+              26,
+              150,
+              75
+            ]
+          },
+          {
+            "label": "tea bag",
+            "score": 0.16453656554222107,
+            "box": [
+              97,
+              28,
+              148,
+              74
+            ]
+          },
+          {
+            "label": "tea bag",
+            "score": 0.16399730741977692,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16350167989730835,
+            "box": [
+              0,
+              30,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "tea bag",
+            "score": 0.1634569615125656,
+            "box": [
+              0,
+              30,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1623487025499344,
+            "box": [
+              24,
+              101,
+              131,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1597851812839508,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1572514772415161,
+            "box": [
+              40,
+              68,
+              77,
+              94
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.2072128802537918,
+            "box": [
+              0,
+              0,
+              319,
+              185
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.19395557045936584,
+            "box": [
+              0,
+              0,
+              319,
+              187
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18578839302062988,
+            "box": [
+              0,
+              0,
+              320,
+              186
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17039000988006592,
+            "box": [
+              0,
+              0,
+              251,
+              143
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16368414461612701,
+            "box": [
+              0,
+              46,
+              319,
+              185
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16113542020320892,
+            "box": [
+              0,
+              0,
+              251,
+              142
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 6,
+          "right_index": 13,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9193390607833862
+        },
+        {
+          "left_index": 7,
+          "right_index": 14,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9193390607833862
+        },
+        {
+          "left_index": 6,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9087150692939758
+        },
+        {
+          "left_index": 3,
+          "right_index": 8,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9067718982696533
+        },
+        {
+          "left_index": 5,
+          "right_index": 10,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9067718982696533
+        },
+        {
+          "left_index": 7,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9062158465385437
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 6,
+          "right_index": 8,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.4647347331047058
+        },
+        {
+          "left_index": 7,
+          "right_index": 10,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.4647347331047058
+        },
+        {
+          "left_index": 6,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.46352618932724
+        },
+        {
+          "left_index": 4,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.4632844924926758
+        },
+        {
+          "left_index": 7,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.46042102575302124
+        },
+        {
+          "left_index": 14,
+          "right_index": 29,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.45917364954948425
+        },
+        {
+          "left_index": 12,
+          "right_index": 29,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.45909637212753296
+        },
+        {
+          "left_index": 13,
+          "right_index": 27,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.4525822103023529
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.18122081458568573,
+            "box": [
+              36,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1728566288948059,
+            "box": [
+              36,
+              99,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16589076817035675,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15340560674667358,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.24090896546840668,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.22733360528945923,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17897929251194,
+            "box": [
+              0,
+              31,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1772947907447815,
+            "box": [
+              0,
+              30,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17175428569316864,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17141498625278473,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": []
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "robot gripper",
+            "score": 0.1738823652267456,
+            "box": [
+              35,
+              100,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16589076817035675,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15340560674667358,
+            "box": [
+              0,
+              59,
+              320,
+              191
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.24090896546840668,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23241274058818817,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.22733360528945923,
+            "box": [
+              23,
+              99,
+              318,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17897929251194,
+            "box": [
+              0,
+              31,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.1772947907447815,
+            "box": [
+              0,
+              30,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.17175428569316864,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17141498625278473,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.17039000988006592,
+            "box": [
+              0,
+              0,
+              251,
+              143
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16113542020320892,
+            "box": [
+              0,
+              0,
+              251,
+              142
+            ]
+          }
+        ]
+      },
+      "image": "case_06_episode_41000_grounded_crop_match.png"
+    },
+    {
+      "case": 7,
+      "episode_index": 56000,
+      "frame_id": 12,
+      "task": "Place the bottled chewing gum held in the left arm into the green felt bag on the left side of the cash register.",
+      "prompts": [
+        "bottled chewing gum",
+        "bottle",
+        "chewing gum",
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "robot gripper",
+            "score": 0.18092119693756104,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18010319769382477,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17580614984035492,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1508161872625351,
+            "box": [
+              24,
+              67,
+              317,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2607053220272064,
+            "box": [
+              26,
+              101,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2440595030784607,
+            "box": [
+              26,
+              101,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.23355937004089355,
+            "box": [
+              26,
+              101,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1503719985485077,
+            "box": [
+              25,
+              65,
+              319,
+              192
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.21485984325408936,
+            "box": [
+              186,
+              87,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.2067650705575943,
+            "box": [
+              186,
+              87,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.18873444199562073,
+            "box": [
+              186,
+              87,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.169076606631279,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.16611696779727936,
+            "box": [
+              186,
+              63,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16525952517986298,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.15707315504550934,
+            "box": [
+              186,
+              63,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15653714537620544,
+            "box": [
+              186,
+              63,
+              319,
+              154
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15001235902309418,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 3,
+          "right_index": 7,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9309875965118408
+        },
+        {
+          "left_index": 3,
+          "right_index": 4,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9216910600662231
+        },
+        {
+          "left_index": 3,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9184067249298096
+        },
+        {
+          "left_index": 7,
+          "right_index": 11,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9099439978599548
+        },
+        {
+          "left_index": 0,
+          "right_index": 16,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.9049152135848999
+        },
+        {
+          "left_index": 1,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.9049152135848999
+        },
+        {
+          "left_index": 2,
+          "right_index": 13,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.9049152135848999
+        },
+        {
+          "left_index": 1,
+          "right_index": 7,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.8866623640060425
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 1,
+          "right_index": 7,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5431312322616577
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [
+          {
+            "label": "robot gripper",
+            "score": 0.18092119693756104,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.18010319769382477,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.17580614984035492,
+            "box": [
+              0,
+              0,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1508161872625351,
+            "box": [
+              24,
+              67,
+              317,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.2607053220272064,
+            "box": [
+              26,
+              101,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1503719985485077,
+            "box": [
+              25,
+              65,
+              319,
+              192
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "left gripper",
+            "score": 0.169076606631279,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16525952517986298,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15001235902309418,
+            "box": [
+              0,
+              88,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.18010319769382477,
+            "box": [
+              0,
+              0,
+              319,
+              192
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.1503719985485077,
+            "box": [
+              25,
+              65,
+              319,
+              192
+            ]
+          }
+        ],
+        "head": []
+      },
+      "image": "case_07_episode_56000_grounded_crop_match.png"
+    },
+    {
+      "case": 8,
+      "episode_index": 90000,
+      "frame_id": 12,
+      "task": "Grip the right arm and pull the zipper.",
+      "prompts": [
+        "left gripper",
+        "right gripper",
+        "robot gripper"
+      ],
+      "detections": {
+        "left wrist": [
+          {
+            "label": "right gripper",
+            "score": 0.1841515749692917,
+            "box": [
+              0,
+              11,
+              199,
+              182
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.178026020526886,
+            "box": [
+              0,
+              11,
+              199,
+              181
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1756119281053543,
+            "box": [
+              0,
+              11,
+              199,
+              185
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1745147407054901,
+            "box": [
+              25,
+              102,
+              145,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.16381925344467163,
+            "box": [
+              25,
+              102,
+              145,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16306176781654358,
+            "box": [
+              0,
+              11,
+              199,
+              181
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15823321044445038,
+            "box": [
+              0,
+              11,
+              199,
+              184
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.22093461453914642,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.20407462120056152,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1979573518037796,
+            "box": [
+              0,
+              0,
+              317,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "right gripper",
+            "score": 0.20506711304187775,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1992904394865036,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19178403913974762,
+            "box": [
+              0,
+              37,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "siglip_pairs": [
+        {
+          "left_index": 9,
+          "right_index": 12,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.8943310976028442
+        },
+        {
+          "left_index": 7,
+          "right_index": 11,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.8854055404663086
+        },
+        {
+          "left_index": 8,
+          "right_index": 10,
+          "left_view": "right wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.8854055404663086
+        }
+      ],
+      "dino_pairs": [
+        {
+          "left_index": 5,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.5694329738616943
+        },
+        {
+          "left_index": 1,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5651127099990845
+        },
+        {
+          "left_index": 6,
+          "right_index": 12,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.5585131645202637
+        },
+        {
+          "left_index": 0,
+          "right_index": 10,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.5535366535186768
+        },
+        {
+          "left_index": 2,
+          "right_index": 7,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.515384316444397
+        },
+        {
+          "left_index": 2,
+          "right_index": 11,
+          "left_view": "left wrist",
+          "right_view": "head",
+          "left_label": "left gripper",
+          "right_label": "left gripper",
+          "similarity": 0.5117688179016113
+        },
+        {
+          "left_index": 6,
+          "right_index": 9,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "robot gripper",
+          "right_label": "robot gripper",
+          "similarity": 0.48074936866760254
+        },
+        {
+          "left_index": 0,
+          "right_index": 8,
+          "left_view": "left wrist",
+          "right_view": "right wrist",
+          "left_label": "right gripper",
+          "right_label": "right gripper",
+          "similarity": 0.46271568536758423
+        }
+      ],
+      "siglip_matches": {
+        "left wrist": [],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.22093461453914642,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.20407462120056152,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1979573518037796,
+            "box": [
+              0,
+              0,
+              317,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "right gripper",
+            "score": 0.20506711304187775,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1992904394865036,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19178403913974762,
+            "box": [
+              0,
+              37,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "dino_matches": {
+        "left wrist": [
+          {
+            "label": "right gripper",
+            "score": 0.1841515749692917,
+            "box": [
+              0,
+              11,
+              199,
+              182
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.178026020526886,
+            "box": [
+              0,
+              11,
+              199,
+              181
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1756119281053543,
+            "box": [
+              0,
+              11,
+              199,
+              185
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.16306176781654358,
+            "box": [
+              0,
+              11,
+              199,
+              181
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.15823321044445038,
+            "box": [
+              0,
+              11,
+              199,
+              184
+            ]
+          }
+        ],
+        "right wrist": [
+          {
+            "label": "left gripper",
+            "score": 0.22093461453914642,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "right gripper",
+            "score": 0.20407462120056152,
+            "box": [
+              0,
+              0,
+              316,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.1979573518037796,
+            "box": [
+              0,
+              0,
+              317,
+              191
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "right gripper",
+            "score": 0.20506711304187775,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "left gripper",
+            "score": 0.1992904394865036,
+            "box": [
+              0,
+              38,
+              319,
+              191
+            ]
+          },
+          {
+            "label": "robot gripper",
+            "score": 0.19178403913974762,
+            "box": [
+              0,
+              37,
+              319,
+              191
+            ]
+          }
+        ]
+      },
+      "image": "case_08_episode_90000_grounded_crop_match.png"
+    }
+  ]
+}

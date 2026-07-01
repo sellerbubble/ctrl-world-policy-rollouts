@@ -1,0 +1,197 @@
+{
+  "detector_model": "/mnt/workspace-20260313/users/liwenhao/models/owlvit-base-patch32",
+  "score_threshold": 0.005,
+  "cases": [
+    {
+      "case": 1,
+      "episode_index": 14171,
+      "frame_id": 12,
+      "task": "Pick up the black frying pan in the sink with left arm.",
+      "prompts": [
+        "black frying pan",
+        "frying pan sink",
+        "black frying",
+        "frying pan",
+        "pan sink",
+        "black",
+        "frying",
+        "pan",
+        "sink",
+        "object",
+        "robot gripper",
+        "gripper",
+        "robot hand",
+        "cube",
+        "block",
+        "box",
+        "cup",
+        "bowl",
+        "container",
+        "drawer",
+        "drawer handle",
+        "handle",
+        "conveyor belt",
+        "table",
+        "tool"
+      ],
+      "matched_labels": [],
+      "detections": {
+        "left wrist": [],
+        "right wrist": [],
+        "head": []
+      },
+      "image": "case_01_episode_14171_grounded_shared_objects.png"
+    },
+    {
+      "case": 2,
+      "episode_index": 17913,
+      "frame_id": 12,
+      "task": "Place the held hand cream in the drawer with the right arm.",
+      "prompts": [
+        "held hand cream",
+        "hand cream drawer",
+        "hand cream",
+        "cream drawer",
+        "hand",
+        "cream",
+        "drawer",
+        "object",
+        "robot gripper",
+        "gripper",
+        "robot hand",
+        "cube",
+        "block",
+        "box",
+        "cup",
+        "bowl",
+        "container",
+        "drawer handle",
+        "handle",
+        "conveyor belt",
+        "table",
+        "tool"
+      ],
+      "matched_labels": [],
+      "detections": {
+        "left wrist": [],
+        "right wrist": [],
+        "head": []
+      },
+      "image": "case_02_episode_17913_grounded_shared_objects.png"
+    },
+    {
+      "case": 3,
+      "episode_index": 27400,
+      "frame_id": 12,
+      "task": "Pick up the small pack of black tissues on the table with the right arm.",
+      "prompts": [
+        "small pack of black tissues",
+        "small pack black",
+        "pack black tissues",
+        "black tissues table",
+        "small pack",
+        "pack black",
+        "black tissues",
+        "tissues table",
+        "small",
+        "pack",
+        "black",
+        "tissues",
+        "table",
+        "object",
+        "robot gripper",
+        "gripper",
+        "robot hand",
+        "cube",
+        "block",
+        "box",
+        "cup",
+        "bowl",
+        "container",
+        "drawer",
+        "drawer handle",
+        "handle",
+        "conveyor belt",
+        "tool"
+      ],
+      "matched_labels": [
+        "table"
+      ],
+      "detections": {
+        "left wrist": [],
+        "right wrist": [
+          {
+            "label": "table",
+            "score": 0.10794089734554291,
+            "box": [
+              197,
+              49,
+              319,
+              189
+            ]
+          }
+        ],
+        "head": [
+          {
+            "label": "table",
+            "score": 0.12448083609342575,
+            "box": [
+              108,
+              20,
+              313,
+              113
+            ]
+          }
+        ]
+      },
+      "image": "case_03_episode_27400_grounded_shared_objects.png"
+    },
+    {
+      "case": 4,
+      "episode_index": 41000,
+      "frame_id": 12,
+      "task": "Dip the tea bag into the cup and lift it out.",
+      "prompts": [
+        "cup and lift it out",
+        "dip tea bag",
+        "tea bag cup",
+        "bag cup lift",
+        "cup lift it",
+        "lift it out",
+        "dip tea",
+        "tea bag",
+        "bag cup",
+        "cup lift",
+        "lift it",
+        "it out",
+        "dip",
+        "tea",
+        "bag",
+        "cup",
+        "lift",
+        "it",
+        "out",
+        "object",
+        "robot gripper",
+        "gripper",
+        "robot hand",
+        "cube",
+        "block",
+        "box",
+        "bowl",
+        "container",
+        "drawer",
+        "drawer handle",
+        "handle",
+        "conveyor belt"
+      ],
+      "matched_labels": [],
+      "detections": {
+        "left wrist": [],
+        "right wrist": [],
+        "head": []
+      },
+      "image": "case_04_episode_41000_grounded_shared_objects.png"
+    }
+  ]
+}

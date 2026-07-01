@@ -26,6 +26,11 @@ The root page is organized into three top-level parts:
    - synchronized left-wrist, right-wrist, and head videos
    - page under `camera_ray_visualization/task327_ep0_stacked_views/`
 
+4. AgiBot semantic mask review
+   - task-diverse 20-episode full-video overlay with semantic masks
+   - earlier semantic-mask pipeline stage review
+   - page under `semantic_mask_review/`
+
 Videos are folded by task, instruction condition, result group, or sample row.
 Click a section to expand the videos. All videos default to `1.75x` playback
 speed in the page script.

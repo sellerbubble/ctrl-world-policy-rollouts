@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgiBot Semantic Mask Probe Review</title>
+  <style>
+    :root {
+      --paper: #f6f3eb;
+      --ink: #1f2623;
+      --muted: #6c746f;
+      --line: #d8d0bf;
+      --field: #fffdf7;
+      --accent: #b64a32;
+      --olive: #576f4d;
+      --gold: #b58a2a;
+      --blue: #3e657d;
+      --shadow: 0 18px 44px rgba(54, 43, 26, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(31,38,35,.035) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(31,38,35,.035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 26px 26px;
+      color: var(--ink);
+      font: 15px/1.55 ui-serif, Georgia, "Times New Roman", serif;
+    }
+    a { color: inherit; }
+    .shell { max-width: 1880px; margin: 0 auto; padding: 34px 32px 68px; }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr);
+      gap: 28px;
+      align-items: end;
+      padding-bottom: 28px;
+      border-bottom: 2px solid var(--ink);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font: 700 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 78px);
+      line-height: .92;
+      letter-spacing: 0;
+      max-width: 950px;
+    }
+    h2 { margin: 0 0 16px; font-size: 28px; letter-spacing: 0; }
+    h3 { margin: 0; font-size: 20px; letter-spacing: 0; }
+    h4 { margin: 0 0 8px; font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; color: var(--olive); }
+    .intro { color: var(--muted); font-size: 17px; margin: 0; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .stat {
+      background: var(--field);
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      min-height: 74px;
+    }
+    .stat span { display: block; color: var(--muted); font: 700 11px/1.25 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; }
+    .stat strong { display: block; margin-top: 8px; font-size: 21px; line-height: 1.1; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 18px 0 0;
+    }
+    nav a, .episode-nav a {
+      text-decoration: none;
+      border: 1px solid var(--ink);
+      background: var(--field);
+      padding: 8px 10px;
+      font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .episode-nav {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .episode-nav a { display: grid; gap: 4px; min-height: 48px; }
+    .episode-nav span {
+      color: var(--muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    section { margin-top: 38px; }
+    .panel {
+      background: rgba(255, 253, 247, .86);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .step {
+      border-left: 5px solid var(--accent);
+      background: var(--field);
+      padding: 14px;
+      min-height: 116px;
+    }
+    .step:nth-child(2) { border-color: var(--gold); }
+    .step:nth-child(3) { border-color: var(--olive); }
+    .step:nth-child(4) { border-color: var(--blue); }
+    .step:nth-child(5) { border-color: var(--ink); }
+    .step b { display: block; font-size: 16px; margin-bottom: 6px; }
+    .step p { margin: 0; color: var(--muted); }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    figure { margin: 0; }
+    figcaption { color: var(--muted); margin-top: 8px; }
+    .review-image, .case-image, .episode-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .image-link { display: block; text-decoration: none; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--field);
+      border: 1px solid var(--line);
+    }
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      font: 700 12px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--olive);
+      text-transform: uppercase;
+      background: #ece5d7;
+    }
+    td:first-child { font: 700 13px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--ink);
+      background: #f0e4c7;
+      padding: 5px 8px;
+      font: 700 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+      max-width: 360px;
+    }
+    .pill.needs-fallback, .pill.skip-semantic-mask { background: #f2d6cd; border-color: var(--accent); color: #7f2c1f; }
+    .pill.gripper-anchor-only { background: #e7ddf1; border-color: #7b5aa6; color: #4d3670; }
+    .pill.usable { background: #dfe8d2; border-color: var(--olive); color: #34482d; }
+    .case-card, .episode-card {
+      background: var(--field);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin-top: 28px;
+    }
+    .case-head, .episode-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .episode-topline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+      font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .episode-topline span {
+      border: 1px solid var(--line);
+      background: #f4eddf;
+      padding: 6px 8px;
+    }
+    .episode-head h3 {
+      font-size: clamp(24px, 2.6vw, 42px);
+      line-height: 1.06;
+      max-width: 1320px;
+    }
+    .episode-subtitle {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+      margin-top: 16px;
+    }
+    .episode-facts {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr .9fr 1fr 1.25fr;
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+    .episode-facts > div {
+      background: #f4eddf;
+      border: 1px solid var(--line);
+      padding: 13px;
+      min-height: 104px;
+    }
+    .episode-facts p { margin: 0; color: var(--ink); }
+    .episode-figure {
+      margin-top: 22px;
+      border-top: 2px solid var(--ink);
+      padding-top: 13px;
+    }
+    .figure-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+    .figure-label p {
+      margin: 0;
+      color: var(--muted);
+      font: 12px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .case-notes {
+      background: #f4eddf;
+      border: 1px solid var(--line);
+      padding: 13px;
+      font-size: 13px;
+    }
+    .case-notes p { margin: 0 0 10px; }
+    details {
+      background: var(--field);
+      border: 1px solid var(--line);
+      padding: 14px;
+      margin-top: 12px;
+    }
+    summary {
+      cursor: pointer;
+      font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--accent);
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .paths {
+      font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: var(--muted);
+      background: #ece5d7;
+      border: 1px solid var(--line);
+      padding: 14px;
+      overflow: auto;
+    }
+    @media (max-width: 1050px) {
+      header, .overview-grid, .case-grid, .pipeline, .compact-grid, .episode-facts, .episode-nav { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .shell { padding: 22px 14px 44px; }
+      .stats { grid-template-columns: 1fr; }
+      .case-head, .episode-head, .figure-label { display: block; }
+      .pill { margin-top: 10px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div>
+        <p class="eyebrow">AgiBot Ctrl-World semantic mask probe · 2026-06-30</p>
+        <h1>LLM-grounded local view masks</h1>
+        <nav>
+          <a href="#pipeline">Pipeline</a>
+          <a href="#object-specs">Object specs</a>
+          <a href="#episodes">Episodes</a>
+          <a href="#skipped">Skipped</a>
+          <a href="#appendix">Appendix</a>
+        </nav>
+      </div>
+      <div>
+        <p class="intro">
+          This page collects the current visual evidence for generating task-relevant,
+          cross-view local masks before integrating them into AgiBot Ctrl-World training.
+        </p>
+        <div class="stats" style="margin-top:16px">
+          <div class="stat"><span>Episodes</span><strong>8</strong></div>
+          <div class="stat"><span>Usable object specs</span><strong>6/8</strong></div>
+          <div class="stat"><span>Gripper anchors</span><strong>on</strong></div>
+          <div class="stat"><span>Avg detections / case</span><strong>28.8</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <section id="pipeline">
+      <h2>Pipeline</h2>
+      <div class="pipeline">
+        <div class="step"><b>1. Task text</b><p>Use the episode instruction as the semantic source.</p></div>
+        <div class="step"><b>2. LLM object spec</b><p>Extract compact object and receptacle prompts; filter robot body words.</p></div>
+        <div class="step"><b>3. GroundingDINO</b><p>Run prompted proposal detection separately on the three views.</p></div>
+        <div class="step"><b>4. Cross-view match</b><p>Rank proposal crops with SigLIP2 and DINOv2 embeddings.</p></div>
+        <div class="step"><b>5. Local latent mask</b><p>Shrink matched boxes into bounded regions on the 40 x 24 latent view grid. Only SigLIP2 and DINOv2 matcher masks are shown.</p></div>
+      </div>
+    </section>
+
+    <section id="object-specs">
+      <h2>Object Spec Extraction</h2>
+      <div class="episode-nav">
+        <a href="#episode-0">ep 0<span>permanent magnet ingot (manipulated_object)</span></a><a href="#episode-8512">ep 8512<span>none</span></a><a href="#episode-14171">ep 14171<span>black frying pan (manipulated_object)</span></a><a href="#episode-17913">ep 17913<span>hand cream (manipulated_object)</span></a><a href="#episode-27400">ep 27400<span>black tissues (context_object)</span></a><a href="#episode-41000">ep 41000<span>tea bag (manipulated_object)</span></a><a href="#episode-56000">ep 56000<span>bottled chewing gum (manipulated_object)</span></a><a href="#episode-90000">ep 90000<span>none</span></a>
+      </div>
+      <table>
+        <thead><tr><th>Episode</th><th>Task</th><th>Objects</th><th>Object Spec Prompts</th><th>Grounding Prompts Used</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>0</td><td>Pick up the permanent magnet ingot from the conveyor belt with right arm.</td><td>permanent magnet ingot (manipulated_object)</td><td>permanent magnet ingot</td><td>permanent magnet ingot, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>8512</td><td>Stretch the sleeve of the garment with the left arm.</td><td>none</td><td>No valid object prompts after filtering.</td><td>left gripper, right gripper, robot gripper</td><td><span class="pill gripper-anchor-only">gripper-anchor only</span></td></tr><tr><td>14171</td><td>Pick up the black frying pan in the sink with left arm.</td><td>black frying pan (manipulated_object)</td><td>black frying pan</td><td>black frying pan, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>17913</td><td>Place the held hand cream in the drawer with the right arm.</td><td>hand cream (manipulated_object)</td><td>hand cream</td><td>hand cream, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>27400</td><td>Pick up the small pack of black tissues on the table with the right arm.</td><td>black tissues (context_object)</td><td>black tissues</td><td>black tissues, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>41000</td><td>Dip the tea bag into the cup and lift it out.</td><td>tea bag (manipulated_object)</td><td>tea bag</td><td>tea bag, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>56000</td><td>Place the bottled chewing gum held in the left arm into the green felt bag on the left side of the cash register.</td><td>bottled chewing gum (manipulated_object)</td><td>bottled chewing gum, bottle, chewing gum</td><td>bottled chewing gum, bottle, chewing gum, left gripper, right gripper, robot gripper</td><td><span class="pill usable">usable</span></td></tr><tr><td>90000</td><td>Grip the right arm and pull the zipper.</td><td>none</td><td>No valid object prompts after filtering.</td><td>left gripper, right gripper, robot gripper</td><td><span class="pill gripper-anchor-only">gripper-anchor only</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="episodes">
+      <h2>Episode Review</h2>
+      <p class="intro">All episodes are shown. Cases without a valid task-object spec are marked as gripper-anchor only, so their masks come from forced gripper/contact prompts rather than task-object labels.</p>
+      
+            <article class="episode-card" id="episode-0">
+              <div class="episode-topline">
+                <span>Case 01</span>
+                <span>Episode 0</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Pick up the permanent magnet ingot from the conveyor belt with right arm.</h3>
+                  <p class="episode-subtitle">Object spec: <b>permanent magnet ingot (manipulated_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>permanent magnet ingot</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>permanent magnet ingot, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 5 / right wrist: 13 / head: 15</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.934<br>DINOv2: left wrist -&gt; head, 0.536</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 5.0% / DINOv2 5.0%<br>right wrist: SigLIP2 5.8% / DINOv2 5.8%<br>head: SigLIP2 0.0% / DINOv2 3.8%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_01_episode_0_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_01_episode_0_grounded_crop_match.png" alt="episode 0 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_01_episode_0_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_01_episode_0_local_mask_regions.png" alt="episode 0 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-8512">
+              <div class="episode-topline">
+                <span>Case 02</span>
+                <span>Episode 8512</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Stretch the sleeve of the garment with the left arm.</h3>
+                  <p class="episode-subtitle">Object spec: <b>none</b></p>
+                </div>
+                <span class="pill gripper-anchor-only">gripper-anchor only</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>No valid object prompts after filtering.</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 11 / right wrist: 6 / head: 4</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.920<br>DINOv2: left wrist -&gt; right wrist, 0.498</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 13.8% / DINOv2 8.8%<br>right wrist: SigLIP2 6.2% / DINOv2 8.8%<br>head: SigLIP2 0.0% / DINOv2 0.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_02_episode_8512_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_02_episode_8512_grounded_crop_match.png" alt="episode 8512 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_02_episode_8512_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_02_episode_8512_local_mask_regions.png" alt="episode 8512 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-14171">
+              <div class="episode-topline">
+                <span>Case 03</span>
+                <span>Episode 14171</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Pick up the black frying pan in the sink with left arm.</h3>
+                  <p class="episode-subtitle">Object spec: <b>black frying pan (manipulated_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>black frying pan</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>black frying pan, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 16 / right wrist: 13 / head: 16</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; head, 0.883<br>DINOv2: left wrist -&gt; head, 0.685</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 9.2% / DINOv2 5.0%<br>right wrist: SigLIP2 0.0% / DINOv2 0.0%<br>head: SigLIP2 5.0% / DINOv2 5.8%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_03_episode_14171_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_03_episode_14171_grounded_crop_match.png" alt="episode 14171 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_03_episode_14171_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_03_episode_14171_local_mask_regions.png" alt="episode 14171 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-17913">
+              <div class="episode-topline">
+                <span>Case 04</span>
+                <span>Episode 17913</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Place the held hand cream in the drawer with the right arm.</h3>
+                  <p class="episode-subtitle">Object spec: <b>hand cream (manipulated_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>hand cream</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>hand cream, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 15 / right wrist: 14 / head: 8</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.955<br>DINOv2: left wrist -&gt; right wrist, 0.728</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 10.0% / DINOv2 14.4%<br>right wrist: SigLIP2 14.4% / DINOv2 14.4%<br>head: SigLIP2 5.0% / DINOv2 0.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_04_episode_17913_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_04_episode_17913_grounded_crop_match.png" alt="episode 17913 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_04_episode_17913_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_04_episode_17913_local_mask_regions.png" alt="episode 17913 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-27400">
+              <div class="episode-topline">
+                <span>Case 05</span>
+                <span>Episode 27400</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Pick up the small pack of black tissues on the table with the right arm.</h3>
+                  <p class="episode-subtitle">Object spec: <b>black tissues (context_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>black tissues</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>black tissues, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 9 / right wrist: 9 / head: 16</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.944<br>DINOv2: left wrist -&gt; right wrist, 0.765</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 5.0% / DINOv2 5.0%<br>right wrist: SigLIP2 10.0% / DINOv2 10.0%<br>head: SigLIP2 5.8% / DINOv2 5.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_05_episode_27400_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_05_episode_27400_grounded_crop_match.png" alt="episode 27400 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_05_episode_27400_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_05_episode_27400_local_mask_regions.png" alt="episode 27400 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-41000">
+              <div class="episode-topline">
+                <span>Case 06</span>
+                <span>Episode 41000</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Dip the tea bag into the cup and lift it out.</h3>
+                  <p class="episode-subtitle">Object spec: <b>tea bag (manipulated_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>tea bag</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>tea bag, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 8 / right wrist: 16 / head: 6</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.919<br>DINOv2: left wrist -&gt; right wrist, 0.465</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 7.5% / DINOv2 7.5%<br>right wrist: SigLIP2 10.2% / DINOv2 10.2%<br>head: SigLIP2 0.0% / DINOv2 5.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_06_episode_41000_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_06_episode_41000_grounded_crop_match.png" alt="episode 41000 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_06_episode_41000_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_06_episode_41000_local_mask_regions.png" alt="episode 41000 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-56000">
+              <div class="episode-topline">
+                <span>Case 07</span>
+                <span>Episode 56000</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Place the bottled chewing gum held in the left arm into the green felt bag on the left side of the cash register.</h3>
+                  <p class="episode-subtitle">Object spec: <b>bottled chewing gum (manipulated_object)</b></p>
+                </div>
+                <span class="pill usable">usable</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>bottled chewing gum, bottle, chewing gum</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>bottled chewing gum, bottle, chewing gum, left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 4 / right wrist: 4 / head: 9</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: left wrist -&gt; right wrist, 0.931<br>DINOv2: left wrist -&gt; right wrist, 0.543</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 8.5% / DINOv2 5.0%<br>right wrist: SigLIP2 6.7% / DINOv2 5.0%<br>head: SigLIP2 5.0% / DINOv2 0.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_07_episode_56000_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_07_episode_56000_grounded_crop_match.png" alt="episode 56000 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_07_episode_56000_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_07_episode_56000_local_mask_regions.png" alt="episode 56000 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+            <article class="episode-card" id="episode-90000">
+              <div class="episode-topline">
+                <span>Case 08</span>
+                <span>Episode 90000</span>
+                <span>Frame 12</span>
+              </div>
+              <div class="episode-head">
+                <div>
+                  <h3>Grip the right arm and pull the zipper.</h3>
+                  <p class="episode-subtitle">Object spec: <b>none</b></p>
+                </div>
+                <span class="pill gripper-anchor-only">gripper-anchor only</span>
+              </div>
+
+              <div class="episode-facts">
+                <div>
+                  <h4>Object Spec</h4>
+                  <p>No valid object prompts after filtering.</p>
+                </div>
+                <div>
+                  <h4>Grounding Prompts Used</h4>
+                  <p>left gripper, right gripper, robot gripper</p>
+                </div>
+                <div>
+                  <h4>GroundingDINO</h4>
+                  <p>left wrist: 7 / right wrist: 3 / head: 3</p>
+                </div>
+                <div>
+                  <h4>Top Matches</h4>
+                  <p>SigLIP2: right wrist -&gt; head, 0.894<br>DINOv2: left wrist -&gt; head, 0.569</p>
+                </div>
+                <div>
+                  <h4>Mask Coverage</h4>
+                  <p>left wrist: SigLIP2 0.0% / DINOv2 5.0%<br>right wrist: SigLIP2 5.0% / DINOv2 5.0%<br>head: SigLIP2 5.0% / DINOv2 5.0%</p>
+                </div>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>GroundingDINO proposals + SigLIP2/DINOv2 crop matching</h4>
+                  <p>Click image to open the original PNG.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_review/case_08_episode_90000_grounded_crop_match.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_crop_match_gripper_score015_review/case_08_episode_90000_grounded_crop_match.png" alt="episode 90000 grounding crop match" loading="lazy"></a>
+              </div>
+
+              <div class="episode-figure">
+                <div class="figure-label">
+                  <h4>Final local latent mask regions</h4>
+                  <p>Columns show baseline, SigLIP2 local mask, and DINOv2 local mask.</p>
+                </div>
+                <a class="image-link" href="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_08_episode_90000_local_mask_regions.png" target="_blank" rel="noreferrer"><img class="episode-image" src="../llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/case_08_episode_90000_local_mask_regions.png" alt="episode 90000 local mask regions" loading="lazy"></a>
+              </div>
+            </article>
+            
+    </section>
+
+    <section id="skipped">
+      <h2>Object-Spec Missing / Gripper-Only Cases</h2>
+      <table>
+        <thead><tr><th>Episode</th><th>Task</th><th>LLM Raw Output</th><th>Decision</th></tr></thead>
+        <tbody>
+          <tr><td>8512</td><td>Stretch the sleeve of the garment with the left arm.</td><td>{
+  &quot;objects&quot;: [
+    {
+      &quot;canonical&quot;: &quot;left arm&quot;,
+      &quot;role&quot;: &quot;context_object&quot;,
+      &quot;prompts&quot;: [&quot;left arm&quot;]
+    }
+  ]
+}</td><td><span class="pill gripper-anchor-only">gripper-anchor only</span></td></tr><tr><td>90000</td><td>Grip the right arm and pull the zipper.</td><td>{
+  &quot;objects&quot;: [
+    {
+      &quot;canonical&quot;: &quot;right arm&quot;,
+      &quot;role&quot;: &quot;context_object&quot;,
+      &quot;prompts&quot;: [&quot;right arm&quot;]
+    }
+  ]
+}</td><td><span class="pill gripper-anchor-only">gripper-anchor only</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="appendix">
+      <h2>Appendix: Overview Sheets</h2>
+      <details>
+        <summary>Show GroundingDINO and local mask overview sheets</summary>
+        <div class="overview-grid">
+        <figure class="panel">
+          <a class="image-link" href="../llm_spec_grounded_crop_match_gripper_score015_v1/grounded_crop_match_overview.png" target="_blank" rel="noreferrer"><img class="review-image" src="../llm_spec_grounded_crop_match_gripper_score015_v1/grounded_crop_match_overview.png" alt="Gripper-enhanced GroundingDINO crop match overview" loading="lazy"></a>
+          <figcaption>Gripper-enhanced probe overview. Main episode figures use score >= 0.15 and forced gripper prompts.</figcaption>
+        </figure>
+        <figure class="panel">
+          <a class="image-link" href="../grounded_shared_objects_probe_v3_lowthr/grounded_shared_objects_overview.png" target="_blank" rel="noreferrer"><img class="review-image" src="../grounded_shared_objects_probe_v3_lowthr/grounded_shared_objects_overview.png" alt="Earlier prompt-only GroundingDINO result" loading="lazy"></a>
+          <figcaption>Earlier prompt-only GroundingDINO probe, useful as a contrast against LLM object specs.</figcaption>
+        </figure>
+        </div>
+      </details>
+      <details>
+        <summary>Show grouped comparison sheets</summary>
+        <div class="compact-grid">
+          <figure><a class="image-link" href="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_01_04.png" target="_blank" rel="noreferrer"><img class="review-image" src="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_01_04.png" alt="siglip2_vs_dinov2_cases_01_04.png" loading="lazy"></a><figcaption>siglip2_vs_dinov2_cases_01_04.png</figcaption></figure><figure><a class="image-link" href="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_05_08.png" target="_blank" rel="noreferrer"><img class="review-image" src="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_05_08.png" alt="siglip2_vs_dinov2_cases_05_08.png" loading="lazy"></a><figcaption>siglip2_vs_dinov2_cases_05_08.png</figcaption></figure><figure><a class="image-link" href="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_09_12.png" target="_blank" rel="noreferrer"><img class="review-image" src="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_09_12.png" alt="siglip2_vs_dinov2_cases_09_12.png" loading="lazy"></a><figcaption>siglip2_vs_dinov2_cases_09_12.png</figcaption></figure><figure><a class="image-link" href="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_13_16.png" target="_blank" rel="noreferrer"><img class="review-image" src="../siglip2_vs_dinov2_mask_cases_v1/siglip2_vs_dinov2_cases_13_16.png" alt="siglip2_vs_dinov2_cases_13_16.png" loading="lazy"></a><figcaption>siglip2_vs_dinov2_cases_13_16.png</figcaption></figure>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>Source Artifacts</h2>
+      <div class="paths">
+        object specs: remote_results/llm_object_spec_probe_v2_fewshot/object_specs.json<br>
+        crop matching: remote_results/llm_spec_grounded_crop_match_gripper_score015_v1/metadata.json<br>
+        thresholded crop matching: remote_results/llm_spec_grounded_crop_match_gripper_score015_review/<br>
+        thresholded local masks: remote_results/llm_spec_grounded_local_mask_regions_gripper_score015_two_matchers/<br>
+        method doc: docs/agibot_llm_grounded_semantic_mask_pipeline_20260630.md
+      </div>
+    </section>
+  </main>
+</body>
+</html>

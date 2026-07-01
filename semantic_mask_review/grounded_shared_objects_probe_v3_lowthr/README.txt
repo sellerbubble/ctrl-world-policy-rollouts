@@ -1,0 +1,1 @@
+Task-prompt zero-shot grounding probe for AgiBot shared multi-view objects. Bold boxes indicate labels detected in at least two views. Matched-label counts: {"table": 1}\n
