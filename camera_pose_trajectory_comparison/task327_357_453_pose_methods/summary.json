@@ -1,5 +1,5 @@
 {
-  "run_root": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701",
+  "run_root": "agibot_pose_method_trajectory_20260701",
   "dataset_pose_key": "matrices_as_stored",
   "align": "Sim3",
   "methods": [
@@ -16,7 +16,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -48,7 +47,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -80,7 +78,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -112,7 +109,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -151,7 +147,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -183,7 +178,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -215,7 +209,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -247,7 +240,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -286,7 +278,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -318,7 +309,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -350,7 +340,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -382,7 +371,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_327/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -421,7 +409,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -453,7 +440,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -485,7 +471,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -517,7 +502,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -556,7 +540,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -588,7 +571,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -620,7 +602,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -652,7 +633,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -691,7 +671,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -723,7 +702,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -755,7 +733,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -787,7 +764,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_357/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -826,7 +802,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -858,7 +833,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -890,7 +864,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -922,7 +895,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/hand_left/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -961,7 +933,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -993,7 +964,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -1025,7 +995,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -1057,7 +1026,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/hand_right/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -1096,7 +1064,6 @@
       "stats": {
         "vggt": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -1128,7 +1095,6 @@
         },
         "vggt_omega": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/vggt_omega_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_from_world_inverted",
           "num_frames": 50,
           "align": "Sim3",
@@ -1160,7 +1126,6 @@
         },
         "pi3x": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/pi3x_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
@@ -1192,7 +1157,6 @@
         },
         "cut3r": {
           "status": "ok",
-          "estimated_pose": "/mnt/workspace/users/liwenhao/ctrl_world_runs/agibot_pose_method_trajectory_20260701/cut3r_estimates/agibot_task_453/episode_000000/head/estimated_pose.npz",
           "estimate_convention": "camera_to_world",
           "num_frames": 50,
           "align": "Sim3",
