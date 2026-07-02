@@ -23,12 +23,19 @@
     .row-head { display:flex; gap:16px; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
     h3 { margin:0; font-size:16px; }
     p { margin:0; color:var(--muted); font-size:12px; line-height:1.35; }
-    .plot-grid { display:grid; grid-template-columns: repeat(3, minmax(390px,1fr)); gap:12px; }
+    .plot-grid { display:grid; grid-template-columns: repeat(2, minmax(460px,1fr)); gap:12px; }
     .plot { height:520px; min-width:0; border:1px solid var(--line); border-radius:7px; overflow:hidden; background:white; }
+    .sim2-section { margin-top:12px; border:1px solid var(--line); border-radius:7px; padding:12px; background:#fbfdff; }
+    .sim2-section h4 { margin:0 0 10px; font-size:14px; }
+    .sim2-method-grid { display:grid; grid-template-columns:repeat(4,minmax(280px,1fr)); gap:10px; }
+    .method-card { min-width:0; }
+    .method-card h5 { margin:0 0 6px; font-size:13px; color:#344054; }
+    .plot.method-sim2 { height:380px; }
     .task-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; margin-top:12px; }
     .task-links a { display:block; border:1px solid var(--line); border-radius:7px; padding:12px; color:var(--accent); text-decoration:none; background:#fbfdff; font-weight:700; }
     .task-links span { display:block; color:var(--muted); font-weight:500; font-size:12px; margin-top:4px; }
-    @media (max-width:1120px) { .plot-grid { grid-template-columns:1fr; } .plot { height:480px; } .row-head { flex-direction:column; gap:5px; } }
+    @media (max-width:1500px) { .sim2-method-grid { grid-template-columns:repeat(2,minmax(320px,1fr)); } }
+    @media (max-width:1120px) { .plot-grid, .sim2-method-grid { grid-template-columns:1fr; } .plot { height:480px; } .plot.method-sim2 { height:420px; } .row-head { flex-direction:column; gap:5px; } }
   </style>
 </head>
 <body>
