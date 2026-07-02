@@ -6,7 +6,7 @@ Published URL:
 
 - https://sellerbubble.github.io/ctrl-world-policy-rollouts/
 
-The root page is organized into four top-level parts:
+The root page is organized into five top-level parts:
 
 1. Official Ctrl-World checkpoint rollouts
    - matched-length policy-in-loop rollout videos across 7 tasks
@@ -30,6 +30,10 @@ The root page is organized into four top-level parts:
    - task-diverse 20-episode full-video overlay with small/medium/large semantic masks
    - earlier semantic-mask pipeline stage review
    - page under `semantic_mask_review/`
+
+5. Camera ray conditioning design
+   - forward-pass diagram for Ctrl-World training with dense camera-ray conditioning
+   - figure under `camera_ray_conditioning/`
 
 Videos are folded by task, instruction condition, result group, or sample row.
 Click a section to expand the videos. All videos default to `1.75x` playback
