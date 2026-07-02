@@ -603,10 +603,13 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 </section>
 <section id="camera-ray-conditioning" class="part">
 <div class="part-head"><div><h2>Part 5. Camera Ray Conditioning Design</h2>
-<div class="part-desc">A compact forward-pass diagram for Ctrl-World training with dense camera-ray conditioning. It summarizes latent preparation, Plucker ray-map construction, conditioned diffusion forward, and the main/auxiliary training objectives.</div></div>
-<div class="badge">training design figure</div></div>
+<div class="part-desc">Compact design diagrams for Ctrl-World training with dense camera-ray conditioning and semantic local-mask conditioning. They summarize latent/geometric preparation, conditioned diffusion forward, and the masked forward dynamics branch.</div></div>
+<div class="badge">training design figures</div></div>
+<p class="group-note"><b>Camera ray conditioning.</b> Dense Plucker ray maps are concatenated with latent/video conditions before the SVD UNet forward pass.</p>
 <a href="camera_ray_conditioning/ctrl_world_camera_ray_conditioning.png"><img class="wide-figure" src="camera_ray_conditioning/ctrl_world_camera_ray_conditioning.png" alt="Ctrl-World training with camera ray conditioning"></a>
-<p class="group-note">Click the figure to open the original PNG.</p>
+<p class="group-note"><b>Masked forward dynamics.</b> A mask branch samples clean vs semantic local-mask conditioning, masks one view only, and keeps the future target clean for video latent diffusion loss.</p>
+<a href="camera_ray_conditioning/masked_forward_dynamics.png"><img class="wide-figure" src="camera_ray_conditioning/masked_forward_dynamics.png" alt="Masked forward dynamics with semantic local masks"></a>
+<p class="group-note">Click either figure to open the original PNG.</p>
 </section>
 <footer>Source artifacts are preserved in the local Ctrl-World workspace and in this Pages repository. This page is for visual review, not a final benchmark claim.</footer>
 </main><script>document.querySelectorAll("video").forEach(v => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; v.addEventListener("loadedmetadata", () => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; }); });</script></body></html>

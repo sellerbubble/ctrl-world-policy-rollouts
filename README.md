@@ -33,6 +33,7 @@ The root page is organized into five top-level parts:
 
 5. Camera ray conditioning design
    - forward-pass diagram for Ctrl-World training with dense camera-ray conditioning
+   - masked forward dynamics diagram for semantic local-mask conditioning
    - figure under `camera_ray_conditioning/`
 
 Videos are folded by task, instruction condition, result group, or sample row.
