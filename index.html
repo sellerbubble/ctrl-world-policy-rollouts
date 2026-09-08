@@ -62,7 +62,7 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <header><div><div class="brand">Ctrl-World rollout visual review</div>
 <h1>Official and Our Checkpoint Rollouts</h1>
 <div class="lead">One page with two clearly separated parts: official Ctrl-World checkpoint rollout results first, then our DreamZero-DROID LeRobot checkpoint rollout results. Videos are folded by task, condition, or sample group; click a row to expand.</div></div>
-<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a><a href="#camera-rays">camera rays</a><a href="#semantic-masks">semantic masks</a><a href="#camera-ray-conditioning">ray conditioning</a></nav></header>
+<nav><a href="#official">official ckpt rollouts</a><a href="#ours">our ckpt rollouts</a><a href="#camera-rays">camera rays</a><a href="#semantic-masks">semantic masks</a><a href="#camera-ray-conditioning">ray conditioning</a><a href="#cosmos3-agibot">Cosmos3 AgiBot</a></nav></header>
 <div class="fact-grid">
 <div class="fact"><b>Official section</b><span>Policy-in-loop rollouts using the provided Ctrl-World checkpoint-10000 setup.</span></div>
 <div class="fact"><b>Our section</b><span>100k, 200k, 300k rollout videos, plus the 20-checkpoint official DROID replay metric sweep.</span></div>
@@ -610,6 +610,19 @@ footer { margin-top:56px; border-top:1px solid var(--ink); padding-top:18px; col
 <p class="group-note"><b>Masked forward dynamics.</b> A mask branch samples clean vs semantic local-mask conditioning, masks one view only, and keeps the future target clean for video latent diffusion loss.</p>
 <a href="camera_ray_conditioning/masked_forward_dynamics.png"><img class="wide-figure" src="camera_ray_conditioning/masked_forward_dynamics.png" alt="Masked forward dynamics with semantic local masks"></a>
 <p class="group-note">Click either figure to open the original PNG.</p>
+</section>
+<section id="cosmos3-agibot" class="part">
+<div class="part-head"><div><h2>Part 6. Cosmos3 AgiBot 33-frame ID/OOD Rollouts</h2>
+<div class="part-desc">A complete fixed-seed rollout evaluation of the step-100 Video2World adaptation. Head-camera and native-canvas variants each cover 20 ID and 20 held-out OOD tasks. Every task is generated as three autoregressive 33-frame segments and assembled into a 97-frame, 10 Hz video.</div></div>
+<div class="badge">80 complete rollouts · 40 ID + 40 OOD</div></div>
+<div class="direct-links"><a href="agibot_cosmos3_video33_rollouts/index.html">Open interactive report</a><a href="agibot_cosmos3_video33_rollouts/protocol.html">Protocol and interpretation</a><a href="agibot_cosmos3_video33_rollouts/summary.json">Machine-readable summary</a></div>
+<table class="summary-table"><thead><tr><th>split / view</th><th>tasks</th><th>boundary / within MAE</th><th>visible motion adherence</th></tr></thead><tbody>
+<tr><td>ID / Head</td><td>20</td><td>1.531</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>ID / Canvas</td><td>20</td><td>1.351</td><td>17 clear / 3 partial / 0 fail</td></tr>
+<tr><td>OOD / Head</td><td>20</td><td>1.357</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>OOD / Canvas</td><td>20</td><td>1.307</td><td>14 clear / 6 partial / 0 fail</td></tr>
+</tbody></table>
+<p class="group-note">Motion adherence is a manual visual-progress label, not an environment task-success rate. The dedicated report provides one independent player and one contact sheet per task.</p>
 </section>
 <footer>Source artifacts are preserved in the local Ctrl-World workspace and in this Pages repository. This page is for visual review, not a final benchmark claim.</footer>
 </main><script>document.querySelectorAll("video").forEach(v => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; v.addEventListener("loadedmetadata", () => { v.defaultPlaybackRate = 1.75; v.playbackRate = 1.75; }); });</script></body></html>

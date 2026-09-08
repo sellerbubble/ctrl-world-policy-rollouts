@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cosmos3 AgiBot rollout protocol</title>
+<style>body{font-family:system-ui;margin:32px auto;max-width:900px;padding:0 18px;background:#f5f6f8;color:#202124;line-height:1.55}main{background:#fff;border:1px solid #d9dde3;border-radius:12px;padding:24px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #d9dde3;padding:8px;text-align:left}code{background:#e9edf3;padding:2px 5px}a{color:#075acb;font-weight:650}.note{background:#fff8dd;border-left:4px solid #e2ad00;padding:12px}</style>
+</head><body><main>
+<p><a href="index.html">← Back to the rollout report</a></p>
+<h1>Evaluation protocol and interpretation</h1>
+<ul>
+<li>Checkpoint: step 100.</li>
+<li>Prompt: <code>task_name + current subgoal</code>.</li>
+<li>Temporal format: three autoregressive 33-frame segments per task at 10 Hz.</li>
+<li>Assembly: duplicate boundary frames are removed to produce one 97-frame video per task.</li>
+<li>Randomness: seed <code>20260829</code> is fixed across views and task splits.</li>
+<li>Coverage: 20 ID tasks and 20 held-out OOD tasks for each input mode.</li>
+</ul>
+<table><thead><tr><th>Split / view</th><th>Boundary / within MAE</th><th>Visible motion adherence</th></tr></thead><tbody>
+<tr><td>ID / Head</td><td>1.531</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>ID / Canvas</td><td>1.351</td><td>17 clear / 3 partial / 0 fail</td></tr>
+<tr><td>OOD / Head</td><td>1.357</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>OOD / Canvas</td><td>1.307</td><td>14 clear / 6 partial / 0 fail</td></tr>
+</tbody></table>
+<p>The canvas variant has the lower segment-boundary penalty on both splits. It also has more clearly adherent ID rollouts, while the two views tie on the held-out OOD label counts.</p>
+<p class="note">Adherence labels measure visible target-directed arm motion and interaction progress, not simulator or real-robot task success. Boundary MAE is a continuity diagnostic rather than a semantic-success score.</p>
+<p><a href="summary.json">Machine-readable summary</a> · <a href="id/manual_id_rollout_adherence_v1.csv">ID manual labels</a></p>
+</main></body></html>

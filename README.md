@@ -6,7 +6,7 @@ Published URL:
 
 - https://sellerbubble.github.io/ctrl-world-policy-rollouts/
 
-The root page is organized into five top-level parts:
+The root page is organized into six top-level parts:
 
 1. Official Ctrl-World checkpoint rollouts
    - matched-length policy-in-loop rollout videos across 7 tasks
@@ -35,6 +35,12 @@ The root page is organized into five top-level parts:
    - forward-pass diagram for Ctrl-World training with dense camera-ray conditioning
    - masked forward dynamics diagram for semantic local-mask conditioning
    - figure under `camera_ray_conditioning/`
+
+6. Cosmos3 AgiBot 33-frame ID/OOD rollouts
+   - head-camera and native-canvas variants at checkpoint step 100
+   - 20 ID and 20 held-out OOD tasks per view, each assembled to 97 frames at 10 Hz
+   - 80 videos, contact sheets, manual motion-adherence labels, and continuity metrics
+   - report under `agibot_cosmos3_video33_rollouts/`
 
 Videos are folded by task, instruction condition, result group, or sample row.
 Click a section to expand the videos. All videos default to `1.75x` playback

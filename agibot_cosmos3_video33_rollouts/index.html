@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>AgiBot complete ID/OOD rollout</title>
+<style>
+body{font-family:system-ui;margin:32px;max-width:1100px;background:#f5f6f8;color:#202124}
+h1,h2{margin-bottom:8px}.cards{display:grid;grid-template-columns:repeat(2,minmax(280px,1fr));gap:16px}
+.card{background:white;border:1px solid #d9dde3;border-radius:12px;padding:18px}a{color:#075acb;font-weight:650}
+table{border-collapse:collapse;background:white;width:100%;margin:16px 0}th,td{border:1px solid #d9dde3;padding:9px;text-align:left}
+code{background:#e9edf3;padding:2px 5px}.note{background:#fff8dd;border-left:4px solid #e2ad00;padding:12px}
+</style></head><body>
+<h1>Cosmos3 AgiBot step-100：完整 ID + OOD rollout</h1>
+<p>Head 与 native Canvas 各覆盖 20 个 ID task 和 20 个 held-out OOD task。每个 task 使用固定 seed，闭环生成 3×33 帧，并去掉重复边界帧拼成 97 帧、10 Hz。每个子页面均为逐行独立播放器。</p>
+<table><thead><tr><th>Split / view</th><th>Tasks</th><th>Segment videos</th><th>97-frame videos</th><th>Boundary / within MAE</th><th>Motion adherence</th></tr></thead>
+<tbody>
+<tr><td>ID Head</td><td>20</td><td>60</td><td>20</td><td>1.531</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>ID Canvas</td><td>20</td><td>60</td><td>20</td><td>1.351</td><td>17 clear / 3 partial / 0 fail</td></tr>
+<tr><td>OOD Head</td><td>20</td><td>60</td><td>20</td><td>1.357</td><td>14 clear / 6 partial / 0 fail</td></tr>
+<tr><td>OOD Canvas</td><td>20</td><td>60</td><td>20</td><td>1.307</td><td>14 clear / 6 partial / 0 fail</td></tr>
+</tbody></table>
+<div class="cards">
+<div class="card"><h2>ID · Head</h2><p><a href="id/head/index.html">打开 20-task gallery</a></p></div>
+<div class="card"><h2>ID · Canvas</h2><p><a href="id/canvas/index.html">打开 20-task gallery</a></p></div>
+<div class="card"><h2>OOD · Head</h2><p><a href="rollout_v2/head/index.html">打开 20-task gallery</a></p></div>
+<div class="card"><h2>OOD · Canvas</h2><p><a href="rollout_v2/canvas/index.html">打开 20-task gallery</a></p></div>
+</div>
+<p class="note">人工标签衡量可见的目标/手臂方向与交互进展，不是机器人环境中的任务成功率。97 帧仅约 9.7 秒，partial 常表示视频结束时仍处于接近目标阶段。</p>
+<p>ID 逐任务标签：<a href="id/manual_id_rollout_adherence_v1.csv">manual_id_rollout_adherence_v1.csv</a>。公开实验协议与结果说明见 <a href="protocol.html">protocol</a>。</p>
+</body></html>

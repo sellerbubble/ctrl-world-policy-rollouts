@@ -1,0 +1,49 @@
+{
+  "checkpoint_step": 100,
+  "fps": 10,
+  "frames_per_segment": 33,
+  "segments_per_task": 3,
+  "assembled_frames": 97,
+  "seed": 20260829,
+  "id": {
+    "head": {
+      "tasks": 20,
+      "segment_videos": 60,
+      "assembled_videos": 20,
+      "boundary_mae_mean": 0.023451814823783935,
+      "within_mae_mean": 0.015314389299941894,
+      "boundary_over_within": 1.5313581471951294,
+      "motion_adherence": {"clear": 14, "partial": 6, "fail": 0}
+    },
+    "canvas": {
+      "tasks": 20,
+      "segment_videos": 60,
+      "assembled_videos": 20,
+      "boundary_mae_mean": 0.020939829293638468,
+      "within_mae_mean": 0.01549483239460313,
+      "boundary_over_within": 1.3514072795606256,
+      "motion_adherence": {"clear": 17, "partial": 3, "fail": 0}
+    }
+  },
+  "ood": {
+    "head": {
+      "tasks": 20,
+      "segment_videos": 60,
+      "assembled_videos": 20,
+      "boundary_mae_mean": 0.019610192927659725,
+      "within_mae_mean": 0.014451740182933083,
+      "boundary_over_within": 1.3569433631818655,
+      "motion_adherence": {"clear": 14, "partial": 6, "fail": 0}
+    },
+    "canvas": {
+      "tasks": 20,
+      "segment_videos": 60,
+      "assembled_videos": 20,
+      "boundary_mae_mean": 0.017941865547030582,
+      "within_mae_mean": 0.013727497791099792,
+      "boundary_over_within": 1.3070018892054145,
+      "motion_adherence": {"clear": 14, "partial": 6, "fail": 0}
+    }
+  },
+  "interpretation": "Motion-adherence labels measure visible target/arm direction and interaction progress, not simulator task success. Canvas has the lower boundary penalty in both ID and OOD."
+}
